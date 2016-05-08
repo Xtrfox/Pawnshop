@@ -2,7 +2,72 @@
   padding: 15px 20px;
   background: #fff;
 }
+body {
+  background-color: white !important;
+}
 
 .remove-padding {
   padding: 0 !important;
+}
+.wrap {
+  margin-left: -15px;
+  margin-right: -15px;
+
+  .header-11 {
+    border-bottom: 1px solid #b3b7b8;
+    height: 67px !important;
+  }
+}
+
+//
+.app-content {
+  background-color: $white;
+  color: #86949b;
+  font-family: $base-font;
+  margin-bottom: 20px;
+
+  .sub-sub-navbar {
+    padding: 10px;
+  }
+
+  .sub-navbar {
+    background-color: #f7f7f7;
+    padding: 7px 4.7%;
+  }
+  .app-body {
+    background-color: $white;
+    color: $darkblue;
+    min-height: 550px;
+    padding: 2.35% 4.7%;
+  }
+  h3 {
+     color: $darkblue;
+     font-family: $base-font;
+     font-weight: 300;
+   }
+
+  @include breakpoint(nano) {
+    h3 {
+     font-size: 28px;
+     margin-top: 10px;
+    }
+
+    .company-image {
+     min-width: 180px;
+    }
+    }
+    @include breakpoint(tablet) {
+    h3 {
+     font-size: 32px;
+     margin-top: 20px;
+    }
+  }
+}
+
+.add-margin-top {
+  margin-top: 3%;
+}
+
+.add-margin-bottom {
+  margin-bottom: 2.5%;
 }
