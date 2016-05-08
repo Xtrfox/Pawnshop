@@ -1,0 +1,19 @@
+Pawn.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
+  $stateProvider
+    .state('index', {
+      url: '/',
+      templateUrl: '<%= asset_path("main/index.html") %>',
+      controller: 'IndexController'
+    })
+    .state('customers', {
+      url:'/customers',
+      templateUrl: '<%= asset_path("main/customer.html") %>'
+    })
+    $urlRouterProvider.otherwise('/');
+    $locationProvider.html5Mode({
+    enabled: true,
+    requireBase: false
+  });
+}).run(function($rootScope, $state) {
+    $rootScope.$state = $state;
+});
