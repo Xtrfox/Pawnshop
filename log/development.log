@@ -24668,3 +24668,132 @@ Started GET "/assets/muber-perks.png" for 127.0.0.1 at 2016-05-09 00:19:36 +0800
 
 
 Started GET "/assets/main/customer.html" for 127.0.0.1 at 2016-05-09 00:19:37 +0800
+
+
+Started GET "/assets/shared/_sidebar.html" for 127.0.0.1 at 2016-05-09 00:43:48 +0800
+
+
+Started GET "/assets/paolo-agloro.jpg" for 127.0.0.1 at 2016-05-09 00:43:48 +0800
+
+
+Started GET "/assets/muber-perks.png" for 127.0.0.1 at 2016-05-09 00:43:48 +0800
+
+
+Started GET "/assets/main/customer.html" for 127.0.0.1 at 2016-05-09 00:43:50 +0800
+
+
+Started GET "/customers" for 127.0.0.1 at 2016-05-09 00:43:52 +0800
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"customers"}
+  Rendered home/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 824ms (Views: 822.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2016-05-09 00:43:53 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-05-09 00:43:53 +0800
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2016-05-09 00:43:53 +0800
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2016-05-09 00:43:53 +0800
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2016-05-09 00:43:53 +0800
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2016-05-09 00:43:53 +0800
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2016-05-09 00:43:53 +0800
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2016-05-09 00:43:53 +0800
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2016-05-09 00:43:53 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-05-09 00:43:53 +0800
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2016-05-09 00:43:53 +0800
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2016-05-09 00:43:53 +0800
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2016-05-09 00:43:53 +0800
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2016-05-09 00:43:53 +0800
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for 127.0.0.1 at 2016-05-09 00:43:53 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-05-09 00:43:53 +0800
+
+
+Started GET "/assets/angular-cookies.js?body=1" for 127.0.0.1 at 2016-05-09 00:43:53 +0800
+
+
+Started GET "/assets/angular-ui-router.js?body=1" for 127.0.0.1 at 2016-05-09 00:43:53 +0800
+
+
+Started GET "/assets/angular/app.js?body=1" for 127.0.0.1 at 2016-05-09 00:43:53 +0800
+
+
+Started GET "/assets/angular/config/routes.js?body=1" for 127.0.0.1 at 2016-05-09 00:43:53 +0800
+
+
+Started GET "/assets/angular/controllers/application_controller.js?body=1" for 127.0.0.1 at 2016-05-09 00:43:53 +0800
+
+
+Started GET "/assets/angular/controllers/index_controller.js?body=1" for 127.0.0.1 at 2016-05-09 00:43:53 +0800
+
+
+Started GET "/assets/angular/controllers/main_controller.js?body=1" for 127.0.0.1 at 2016-05-09 00:43:53 +0800
+
+
+Started GET "/assets/angular/directives/base_directive.js?body=1" for 127.0.0.1 at 2016-05-09 00:43:53 +0800
+
+
+Started GET "/assets/angular/directives/sidebar_directive.js?body=1" for 127.0.0.1 at 2016-05-09 00:43:53 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-05-09 00:43:53 +0800
+
+
+Started GET "/assets/angular.js?body=1" for 127.0.0.1 at 2016-05-09 00:43:53 +0800
+
+
+Started GET "/bariol_regular-webfont.woff" for 127.0.0.1 at 2016-05-09 00:43:53 +0800
+Processing by HomeController#index as 
+  Parameters: {"path"=>"bariol_regular-webfont"}
+  Rendered home/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 355ms (Views: 354.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/shared/_sidebar.html" for 127.0.0.1 at 2016-05-09 00:43:54 +0800
+
+
+Started GET "/assets/main/customer.html" for 127.0.0.1 at 2016-05-09 00:43:54 +0800
+
+
+Started GET "/bariol_regular-webfont.ttf" for 127.0.0.1 at 2016-05-09 00:43:54 +0800
+Processing by HomeController#index as 
+  Parameters: {"path"=>"bariol_regular-webfont"}
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 315ms (Views: 315.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/muber-perks.png" for 127.0.0.1 at 2016-05-09 00:43:54 +0800
+
+
+Started GET "/assets/paolo-agloro.jpg" for 127.0.0.1 at 2016-05-09 00:43:54 +0800
+
+
+Started GET "/assets/main/index.html" for 127.0.0.1 at 2016-05-09 00:43:56 +0800
