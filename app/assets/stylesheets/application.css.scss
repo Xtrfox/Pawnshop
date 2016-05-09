@@ -1,8 +1,11 @@
 @import 'compass/css3';
 @import 'bootstrap-sprockets';
 @import 'custom';
+@import 'symbolset/base';
 @import 'home';
+@import 'style';
 @import 'sidebar';
+@import 'customers';
 @import 'main';
-@import 'bootstrap';
+// @import 'bootstrap';
 // @import 'font-awesome';
