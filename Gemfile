@@ -41,8 +41,7 @@ gem 'oj'
 gem 'amazon-ecs'
 gem 'devise', '=3.3.0'
 gem 'twilio-ruby', '~> 3.12'
-
-
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
