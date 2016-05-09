@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  transaction_id: 1
+  customer_id: 1
+  service_charge: 1
+  total: 1
+  paid_amount: 1
+
+two:
+  transaction_id: 1
+  customer_id: 1
+  service_charge: 1
+  total: 1
+  paid_amount: 1

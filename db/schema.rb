@@ -11,6 +11,50 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20160509144537) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "customers", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "middle_initial"
+    t.string   "street_address_1"
+    t.string   "street_address_2"
+    t.string   "city"
+    t.integer  "postal_code"
+    t.integer  "mobile"
+    t.integer  "landline"
+    t.datetime "bday"
+    t.integer  "customer_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "items", force: true do |t|
+    t.integer  "item_id"
+    t.integer  "transaction_id"
+    t.string   "category"
+    t.text     "description"
+    t.string   "risk_level"
+    t.integer  "amount"
+    t.datetime "pawn_date"
+    t.datetime "due_date"
+    t.string   "status"
+    t.text     "history"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "transactions", force: true do |t|
+    t.integer  "transaction_id"
+    t.integer  "customer_id"
+    t.integer  "service_charge"
+    t.integer  "total"
+    t.integer  "paid_amount"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
