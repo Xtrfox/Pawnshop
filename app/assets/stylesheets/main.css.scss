@@ -62,6 +62,219 @@ body {
      margin-top: 20px;
     }
   }
+
+  .app-body {
+    background-color: $white;
+    color: $darkblue;
+    min-height: 550px;
+    padding: 2.35% 4.7%;
+  }
+
+  @include breakpoint(nano - 120) {
+    .edit {
+      min-width: 60px !important;
+      padding: 0;
+      margin-top: -3px;
+      font-size: 11px;
+    }
+  }
+
+  @include breakpoint(nano) {
+    h4 {
+      font-size: 14px;
+    }
+
+    p {
+      font-size: 13px;
+    }
+
+    a {
+      font-size: 12px;
+    }
+
+    h5 {
+        font-size: 14px;
+    }
+
+    label {
+      width: 100%;
+      margin: 10px 0 10px;
+      font-size: 13px;
+    }
+
+    .app-body {
+      padding-top: 5px;
+    }
+  }
+
+  @include breakpoint(mobile) {
+    h4 {
+      font-size: 17px;
+    }
+
+    p {
+      font-size: 15px;
+    }
+
+    a {
+      font-size: 14px;
+    }
+
+    h5 {
+        font-size: 16px;
+    }
+
+    .table-responsive {
+      padding: 0 !important;
+    }
+
+    .app-body {
+      padding-top: 10px;
+    }
+  }
+
+  @include breakpoint(tablet) {
+    h4 {
+      font-size: 20px;
+    }
+    .app-body {
+      padding-top: 2.35%;
+    }
+  }
+
+  @include breakpoint(laptop) {
+    h5 {
+      font-size: 21px;
+    }
+    p {
+      font-size: 18px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .btn {
+      min-width: 110px !important;
+      padding: 5px 0;
+      margin-top: -5px;
+    }
+  }
+
+  .row-spacing {
+    padding: 25px 0 0;
+  }
+
+  hr {
+    margin-bottom: 40px;
+    margin-top: 40px;
+  }
+
+  .form-control {
+    border-color: #677c85;
+    @include border-radius(4px);
+  }
+
+  .wide-button {
+    padding: 10px 15px;
+  }
+
+  .line2 {
+    margin-top: 25px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, .075));
+    font-size: 14px;
+    @include transition(border linear .2s, box-shadow linear .2s);
+    background-color: #fff;
+    border: 1px solid #ccc;
+  }
+
+  .padding {
+    margin-top: 21px;
+    padding: 7px;
+  }
+
+  input[type="text"]:focus {
+    @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6));
+    border-color: #66afe9;
+  }
+
+
+    //employees/manage
+  .p-font {
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .table-header {
+    font-size: 16px;
+
+    .blue:hover {
+      color: #5dade2;
+    }
+  }
+
+  .table-buttons {
+    text-align: right;
+
+    button {
+      margin-right: 4%;
+    }
+  }
+
+    //merchants/companies/settings
+  .company-image {
+    min-width: 180px;
+    width: 80%;
+    max-width: 220px;
+  }
+
+  @include breakpoint(nano) {
+    .company-image {
+      width: 160px;
+      margin-bottom: 15px;
+    }
+
+    .info {
+      padding-top: 5px;
+    }
+  }
+  @include breakpoint(mobile) {
+    .company-image {
+      width: 80%;
+    }
+    .info {
+      padding-top: 25px;
+    }
+  }
+
+  .info {
+    @media (max-width: 600px) {
+      .col-xs-5, .col-xs-7 {
+        width: 100% !important;
+      }
+    }
+  }
+  .block {
+    display: block;
+  }
+
+  .social-media {
+    margin-left: 15px;
+    margin-top: 15px;
+
+    a {
+      color: $darkblue;
+      margin-left: 10px;
+    }
+
+    a:hover {
+      color: $red;
+    }
+  }
+
 }
 
 .add-margin-top {
@@ -70,4 +283,55 @@ body {
 
 .add-margin-bottom {
   margin-bottom: 2.5%;
+}
+
+
+//add-customer
+
+
+#member-form {
+
+  h5 {
+    color: #788991;
+    font-size: 16px;
+    letter-spacing: 0;
+    margin-bottom: 3%;
+    margin-top: 3%;
+    text-transform: uppercase;
+  }
+
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .day {
+    width: 23%;
+    margin-right: 10px;
+  }
+
+  .year {
+    width: 23%;
+    margin-right:0;
+  }
+
+  .month {
+    width: 28%;
+    margin-right: 10px;
+  }
+}
+
+select {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, .075));
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  @include transition(border linear .2s, -webkit-box-shadow linear .2s);
+  @include transition(border linear .2s, box-shadow linear .2s);
+  height: 2.7vw;
+  margin-right: 20px;
+  width: 5vw;
+}
+.add-width {
+  width: 100%;
 }
