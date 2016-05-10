@@ -17,6 +17,23 @@ Pawn.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
       controller: 'CustomerController'
 
     })
+
+    // .state('manage.customer', {
+    //   abstract: true,
+    //   url: '/customer',
+    //   views {
+    //     templateUrl: '<%= asset_path("main/subnavbar.html") %>',
+    //     controller: 'SubNavbarController'
+    //   }
+    // }
+    // .state('manage.customer.detail', {
+    //   url: '/customer',
+    //   views {
+    //     templateUrl: '<%= asset_path("main/subnavbar.html") %>',
+    //     controller: 'SubNavbarController'
+    //   }
+  //}
+  //  })
     $urlRouterProvider.otherwise('/');
     $locationProvider.html5Mode({
     enabled: true,

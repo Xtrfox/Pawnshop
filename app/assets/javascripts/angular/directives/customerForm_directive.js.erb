@@ -44,22 +44,26 @@ angular.module('Pawn.directives')
 
       $scope.teamForm = function(data) {
         $scope.submitted = true;
+        // $scope.customer.firstName = {};
+        //
+        // if(data) {
+        //   data = {
+        //     "first_name": $scope.teamForm.customer.firstName,
+        //     "last_name": $scope.customer.lastName,
+        //     "middle_initial": $scope.customer.middleInitial,
+        //     "bday": $scope.customer.birthday,
+        //     "street_address_1": $scope.customer.line1,
+        //     "street_address_2": $scope.customer.line2,
+        //     "postal_code": $scope.customer.postalcode,
+        //     "city": $scope.customer.city,
+        //     "mobile_number": $scope.customer.mobileNumber,
+        //     "landline": $scope.customer.landline
+        //   }
+      //}
+      console.log($scope.customer.firstName);
 
+    }
 
-          data = {
-            "first_name": $scope.customer.firstName,
-            "last_name": $scope.customer.lastName,
-            "middle_initial": $scope.customer.middleInitial,
-            "bday": $scope.customer.birthday,
-            "street_address_1": $scope.customer.line1,
-            "street_address_2": $scope.customer.line2,
-            "postal_code": $scope.customer.postalcode,
-            "city": $scope.customer.city,
-            "mobile_number": $scope.customer.mobileNumber,
-            "landline": $scope.customer.landline
-          }
-
-      }
     }
 
   }

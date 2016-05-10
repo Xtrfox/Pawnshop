@@ -1,21 +1,20 @@
-#member-form data-ng-repeat="item in items"
+#form data-ng-repeat="item in items"
   h5 Item {{ $index + 1 }}
-  form name= "itemForm" ng-submit="submitForm();" novalidate=""
   .row
     .no-padding.col-md-3
       label for="category" Category
-      input.form-control type="text" ng-model="item.category" name= "category" placeholder= "Jewelry"
+      input.form-control type="text" ng-model="category" name= "category" placeholder= "Jewelry"
   .row-spacing.row
     .no-padding.col-md-3
-      label for="decription" Description
-      input.form-control type="text" ng-model="item.description" name= "description" required= "" placeholder= "Gold Ring"
+      label for="description" Description
+      input.form-control type="text" ng-model= "description" name= "description" required= "" placeholder= "Gold Ring"
       span.validation
         div ng-show="submitted && itemForm.firstName.$error"
           div ng-show="itemForm.description.$error.required"
             i.fa.fa-exclamation-circle  Description is required
     .col-md-3
       label for="riskLevel" Risk Level
-      select.add-width ng-model="customer.riskLevel" name="riskLevel" required=""
+      select.add-width ng-model="riskLevel" name="riskLevel" required=""
         option ng-disabled="true" selected= "true" value="" Risk Level
         option value= "0.05" Low
         option value= "0.35" Medium
@@ -23,7 +22,7 @@
         option value= "0.0875" Very High
     .col-md-3
       label for="amount" Amount
-      input.form-control type="text" ng-model="item.amount" name="amount" required="" placeholder= "10000"
+      input.form-control type="text" ng-model="amount" name="amount" required="" placeholder= "10000"
       span.validation
         div ng-show="submitted && item.amount.$error"
           div ng-show="itemForm.middleInitial.$error.required"
@@ -32,7 +31,7 @@
   .row-spacing.row
     .no-padding.col-md-4
       label.block for="pawnDate" Pawn Date
-      div ng-model= "item.pawnDate"
+      div ng-model= "pawnDate"
         select.month ng-model="item.month" ng-options="month.name for month in months track by month.value" name="pawnDate" required=""
           option ng-disabled="true" selected= "true" value="" Month
         select.day.inline ng-model="item.day" ng-options="day.day for day in days track by day.value" name="pawnDate" required=""
@@ -45,7 +44,7 @@
 
     .no-padding.col-md-4
       label.block for="dueDate" Due Date
-      div ng-model= "item.dueDate"
+      div ng-model= "dueDate"
         select.month ng-model="item.month" ng-options="month.name for month in months track by month.value" name="dueDate" required=""
           option ng-disabled="true" selected= "true" value="" Month
         select.day.inline ng-model="item.day" ng-options="day.day for day in days track by day.value" name="dueDate" required=""

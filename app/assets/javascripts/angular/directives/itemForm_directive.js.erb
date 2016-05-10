@@ -41,21 +41,13 @@ angular.module('Pawn.directives')
           { value: 11, name: 'November' },
           { value: 12, name: 'December' }
       ];
+  //     $scope.submitForm = function() {
+  //       $scope.submitted = true;
+  //
+  // //    console.log($parent.$scope.item.category);
+  //
+  //   }
 
-      $scope.itemForm = function(data) {
-        $scope.submitted = true;
-
-
-          data = {
-            "category": $scope.item.category,
-            "description": $scope.item.description,
-            "risk_level": $scope.item.risk_level,
-            "amount": $scope.item.amount,
-            "pawn_date": $scope.item.pawn_date,
-            "due_date": $scope.item.due_date,
-          }
-
-      }
 
 
     }

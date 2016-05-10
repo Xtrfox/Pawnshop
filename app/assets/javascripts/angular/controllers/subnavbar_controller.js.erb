@@ -1,0 +1,12 @@
+Pawn.controller('SubNavbarController',
+  function($scope, DemoService, $state) {
+    $scope.tab = $state.current.name;
+
+
+  if($state.current.name==='manage.customer.detail' || $state.current.name==='manage.customer.activity') {
+    $scope.title = 'Bryan Conde';
+    $scope.navbarOptions = [{"label": 'Detail', 'link':'detail' },
+                            {"label": 'Activity', 'link':'activity'}]
+  }
+
+});
