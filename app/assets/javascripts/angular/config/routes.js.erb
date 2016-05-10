@@ -5,10 +5,15 @@ Pawn.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
       templateUrl: '<%= asset_path("main/index.html") %>',
       controller: 'IndexController'
     })
+
     .state('manage', {
       url:'/manage',
-      templateUrl: '<%= asset_path("main/manage.html") %>',
-      controller: 'ManageController'
+        templateUrl: '<%= asset_path("main/manage.html") %>',
+        controller: 'ManageController'
+    })
+    .state('add', {
+      url: '/add',
+      templateUrl: '<%= asset_path("main/add.html") %>'
     })
     $urlRouterProvider.otherwise('/');
     $locationProvider.html5Mode({
