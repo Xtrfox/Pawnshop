@@ -1,16 +1,16 @@
 angular.module('Pawn.directives')
-  .directive('addMemberForm', function() {
+  .directive('addCustomerForm', function() {
     return {
       restrict: 'E',
       replace: true,
-      templateUrl: '<%= asset_path("shared/_addMemberForm.html") %>',
+      templateUrl: '<%= asset_path("shared/_addCustomerForm.html") %>',
       controller: function($scope){
-        $scope.members=[{id:1}];
+        $scope.customers=[{id:1}];
 
-        $scope.addNewMember= function(){
-          var newItemNo = $scope.members.length+1;
+        $scope.addNewCustomer= function(){
+          var newItemNo = $scope.customers.length+1;
           console.log(newItemNo);
-          $scope.members.push({'id': newItemNo});
+          $scope.customers.push({'id': newItemNo});
         };
 
         $scope.totaldays = 31;
@@ -41,6 +41,26 @@ angular.module('Pawn.directives')
           { value: 11, name: 'November' },
           { value: 12, name: 'December' }
       ];
+
+      $scope.teamForm = function(data) {
+        $scope.submitted = true;
+
+
+          data = {
+            "first_name": $scope.customer.firstName,
+            "last_name": $scope.customer.lastName,
+            "middle_initial": $scope.customer.middleInitial,
+            "bday": $scope.customer.birthday,
+            "street_address_1": $scope.customer.line1,
+            "street_address_2": $scope.customer.line2,
+            "postal_code": $scope.customer.postalcode,
+            "city": $scope.customer.city,
+            "mobile_number": $scope.customer.mobileNumber,
+            "landline": $scope.customer.landline
+          }
+
+      }
     }
+
   }
 });

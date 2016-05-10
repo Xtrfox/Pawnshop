@@ -25,10 +25,11 @@
           th Customer ID
           th First Name
           th Last Name
-          th City
           th Mobile
-          th Landline
-          th Birthdate
+          th Item No.
+          th Description
+          th Amount
+          th Status
           th Date Added
       tr.pointer-cursor.search-table ng-repeat="customer in customers | filter:search"
         td
@@ -40,13 +41,15 @@
         td ng-click="clickedcustomer(customer)"
           | {{customer.last_name}}
         td ng-click="clickedcustomer(customer)"
-          | {{customer.city}}
-        td ng-click="clickedcustomer(customer)"
           | {{customer.mobile}}
         td ng-click="clickedcustomer(customer)"
-          | {{customer.landline}}
+          | {{customer.item_no}}
         td ng-click="clickedcustomer(customer)"
-          | {{customer.birth_date}}
+          | {{customer.description}}
+        td ng-click="clickedcustomer(customer)"
+          | {{customer.amount}}
+        td ng-click="clickedcustomer(customer)"
+          | {{customer.status}}
         td ng-click="clickedcustomer(customer)"
           | {{customer.date_added}}
       tr ng-if="!(customers | filter:search).length"

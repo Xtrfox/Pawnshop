@@ -1,5 +1,8 @@
 .app-body
-  add-member-form
+  add-customer-form
   .addmore.add-margin-top
-    button.btn.btn-primary.btn-wide.second-space type="submit" ng-click="submitted=true" ng-disabled="submitted && teamForm.$invalid"  Add Members
-    button.btn.btn-default Cancel
+
+  add-item-form
+
+  button.btn.btn-primary.btn-wide.second-space.add-margin-top type="submit" ng-click="submitted=true" ng-disabled="submitted && teamForm.$invalid && itemForm.$invalid" Add Pawn
+  button.btn.btn-default.add-margin-top Cancel

@@ -1,14 +1,14 @@
-#member-form data-ng-repeat="member in members"
+#member-form data-ng-repeat="customer in customers"
   h5 Customer {{ $index + 1 }}
   form name= "teamForm" ng-submit="submitForm();" novalidate=""
     .row
       .no-padding.col-md-3
         label for="employeeId" Customer Id
-        input.form-control type="text" ng-model="member.employeeId" name= "employeeId"
+        input.form-control type="text" ng-model="customer.employeeId" name= "employeeId"
     .row-spacing.row
       .no-padding.col-md-3
         label for="firstName" First Name
-        input.form-control type="text" ng-model="member.firstName" name= "firstName" required= "" placeholder= "Paolo" ng-pattern="/^[a-zA-Z ]+$/"
+        input.form-control type="text" ng-model="customer.firstName" name= "firstName" required= "" placeholder= "Paolo" ng-pattern="/^[a-zA-Z ]+$/"
         span.validation
           div ng-show="submitted && teamForm.firstName.$error"
             div ng-show="teamForm.firstName.$error.required"
@@ -17,7 +17,7 @@
               i.fa.fa-exclamation-circle  Please enter a valid first name
       .col-md-3
         label for="lastName" Last Name
-        input.form-control type="text" ng-model="member.lastName" name="lastName" required="" placeholder= "Agloro" ng-pattern="/^[a-zA-Z ]+$/"
+        input.form-control type="text" ng-model="customer.lastName" name="lastName" required="" placeholder= "Agloro" ng-pattern="/^[a-zA-Z ]+$/"
         span.validation
           div ng-show="submitted && teamForm.lastName.$error"
             div ng-show="teamForm.lastName.$error.required"
@@ -26,19 +26,19 @@
               i.fa.fa-exclamation-circle  Please enter a valid last name
       .col-md-3
         label for="middleInitial" Middle Initial
-        input.form-control type="text" ng-model="member.middleInitial" name="middleInitial" required="" placeholder= "M"
+        input.form-control type="text" ng-model="customer.middleInitial" name="middleInitial" required="" placeholder= "M"
         span.validation
           div ng-show="submitted && teamForm.middleInitial.$error"
             div ng-show="teamForm.middleInitial.$error.required"
               i.fa.fa-exclamation-circle  Middle Initial is required
       .no-padding.col-md-4
         label.block for="birthday" Birthday
-        div ng-model= "member.birthday"
-          select.month ng-model="member.month" ng-options="month.name for month in months track by month.value" name="birthday" required=""
+        div ng-model= "customer.birthday"
+          select.month ng-model="customer.month" ng-options="month.name for month in months track by month.value" name="birthday" required=""
             option ng-disabled="true" selected= "true" value="" Month
-          select.day.inline ng-model="member.day" ng-options="day.day for day in days track by day.value" name="birthday" required=""
+          select.day.inline ng-model="customer.day" ng-options="day.day for day in days track by day.value" name="birthday" required=""
             option ng-disabled="true" required= "" value=""  Day
-          select.year.inline ng-model="member.year" ng-options="year.year for year in years track by year.value" name="birthday" required=""
+          select.year.inline ng-model="customer.year" ng-options="year.year for year in years track by year.value" name="birthday" required=""
             option.inline ng-disabled="true" value=""  Year
         span.validation
           div ng-show="submitted && teamForm.birthday.$error.required"
@@ -46,28 +46,28 @@
     .row-spacing.row
       .no-padding.col-md-3
         label for="address" Address
-        input.form-control placeholder="Line 1" type="text" ng-model="member.line1" name= "line1" required= ""
+        input.form-control placeholder="Line 1" type="text" ng-model="customer.line1" name= "line1" required= ""
         span.validation
           div ng-show="submitted && teamForm.line1.$error.required"
             i.fa.fa-exclamation-circle  An address is required
       .col-md-3
-        input.form-control.line2 placeholder="Line 2" type="text" ng-model="member.line2"
+        input.form-control.line2 placeholder="Line 2" type="text" ng-model="customer.line2"
       .no-padding.col-md-3
         label for="postalcode" Postal code
-        input.form-control type="text" ng-model="member.postalcode" name="postalcode" required= "" placeholder= "XXXX"
+        input.form-control type="text" ng-model="customer.postalcode" name="postalcode" required= "" placeholder= "XXXX"
         span.validation
           div ng-show="submitted && teamForm.postalcode.$error.required"
             i.fa.fa-exclamation-circle  Postal code is required
       .col-md-3
         label for="city" City
-        input.form-control type="text" ng-model="member.city" name= "city" required= "" placeholder= "Quezon"
+        input.form-control type="text" ng-model="customer.city" name= "city" required= "" placeholder= "Quezon"
         span.validation
           div ng-show="submitted && teamForm.city.$error"
             div ng-show="teamForm.city.$error.required"
               i.fa.fa-exclamation-circle  City is required
       .col-md-3
         label for="mobileNumber" Mobile Number
-        input.form-control type="text" ng-model="member.mobileNumber" name= "mobileNumber" required= "" placeholder= "091XXXXXXXX" ng-pattern="/^\d{11}?$/"
+        input.form-control type="text" ng-model="customer.mobileNumber" name= "mobileNumber" required= "" placeholder= "091XXXXXXXX" ng-pattern="/^\d{11}?$/"
         span.validation
           div ng-show="submitted && teamForm.mobileNumber.$error"
             div ng-show="teamForm.mobileNumber.$error.required"
@@ -76,10 +76,8 @@
               i.fa.fa-exclamation-circle  Number must be 11 digits in length
       .col-md-3
         label for="mobileNumber" Landline Number
-        input.form-control type="text" ng-model="member.landlineNumber" name= "landlineNumber" required= "" placeholder= "321-456"
+        input.form-control type="text" ng-model="customer.landlineNumber" name= "landlineNumber" required= "" placeholder= "321-456"
         span.validation
           div ng-show="submitted && teamForm.landlineNumber.$error"
             div ng-show="teamForm.landlineNumber.$error.required"
               i.fa.fa-exclamation-circle  Landline number is required
-      .col-md-2
-        button.outline-button.padding ng-show="$last" ng-click="addNewMember()" type="submit"  Add more

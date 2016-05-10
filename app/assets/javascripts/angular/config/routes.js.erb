@@ -13,7 +13,9 @@ Pawn.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     })
     .state('add', {
       url: '/add',
-      templateUrl: '<%= asset_path("main/add.html") %>'
+      templateUrl: '<%= asset_path("main/add.html") %>',
+      controller: 'CustomerController'
+
     })
     $urlRouterProvider.otherwise('/');
     $locationProvider.html5Mode({
