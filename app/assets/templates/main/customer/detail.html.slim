@@ -1,0 +1,84 @@
+.app-body ng-switch="" on="selection"
+  h4 Basic Information
+  .row-spacing
+    button.btn.btn-primary.btn-wide.add-right type="submit"  ng-model="selection" ng-click="changedSelection('edit')" ng-switch-when="save" Update and Save
+    button.btn.btn-primary.btn-wide.add-right type="submit"  ng-model="selection" ng-click="changedSelection('save')" ng-switch-when="edit" Edit
+    button.btn.btn-default Cancel
+  div ng-switch-when="save"
+    .row-spacing.row
+      .no-padding.col-md-3 ng-switch="" on="selection"
+        label for="customerId" Customer Id
+        input.form-control type="text" value="092199"
+    .row
+      .no-padding.col-md-3
+        label for="firstName" First Name
+        input.form-control type="text" value="Paolo"
+      .col-md-3
+        label for="lastName" Last Name
+        input.form-control type="text" value="Agloro"
+      .no-padding.col-md-3
+        label for="middleInitial" Middle Initial
+        input.form-control type="text" value="M"
+      .col-md-3
+        label for="birthday" Birthday
+        input.form-control type="text" value="05/06/1993"
+    .row
+      .no-padding.col-md-3
+        label for="address" Address
+        input.form-control placeholder="Line 1" type="text" value="Ateneo de Manila University"
+      .col-md-3
+        input.form-control.line2 placeholder="Line 2" type="text" value="Unit 1716"
+      .col-md-3
+        label for="city" City
+        input.form-control type="text" value="Quezon"
+      .no-padding.col-md-3
+        label for="postalcode" Postal Code
+        input.form-control type="text" value="1803"
+
+    .row
+      .col-md-3
+        label for="mobileNumber" Mobile Number
+        input.form-control type="text" value="09159169999"
+      .col-md-3
+        label for="mobileNumber" Landline Number
+        input.form-control type="text" value="369-5321"
+    //
+  .edit-panel ng-switch-when="edit"
+    .row-spacing.row
+      .no-padding.col-md-3
+        label for="customerId" Customer Id
+        p 092199
+    .row
+      .no-padding.col-md-3
+        label for="firstName" First Name
+        p Paolo
+      .col-md-3
+        label for="lastName" Last Name
+        p Agloro
+      .no-padding.col-md-3
+        label for="middleInitial" Middle Initial
+        p M
+      .col-md-3
+        label for="birthday" Birthday
+        p May 06 1993
+    .row
+      .no-padding.col-md-6
+        label for="address" Address
+        p Ateneo de Manila University
+      .no-padding.col-md-3
+        label for="city" City
+        p Quezon
+      .no-padding.col-md-3
+        label for="postalcode" Postal Code
+        p 1803
+    .row
+      .col-md-3
+        label for="mobileNumber" Mobile Number
+        p 09159169999
+      .col-md-3
+        label for="landlineNumber" Landline Number
+        p 369-5321
+
+    .row-spacing
+      button.btn.btn-primary.btn-wide.add-right type="button" ng-click="clickedsettle(customer)" Settle
+      button.btn.btn-primary.btn-wide.add-right type="button"  Extend
