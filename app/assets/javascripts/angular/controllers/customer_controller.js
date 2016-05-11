@@ -67,6 +67,10 @@ angular.module('Pawn.controllers')
         "landline": $scope.customer.landline,
         "items": items
       }
-      console.log(data)
+
+      CustomerService.createShipping(data)
+      .then(function(d){
+        console.log(d)
+      })
     }
   });
