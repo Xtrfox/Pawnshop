@@ -1,6 +1,5 @@
 #member-form data-ng-repeat="item in items"
   h5 Item {{ $index + 1 }}
-  form name= "itemForm" ng-submit="submitForm();" novalidate=""
   .row
     .no-padding.col-md-3
       label for="category" Category
@@ -10,12 +9,12 @@
       label for="decription" Description
       input.form-control type="text" ng-model="item.description" name= "description" required= "" placeholder= "Gold Ring"
       span.validation
-        div ng-show="submitted && itemForm.firstName.$error"
-          div ng-show="itemForm.description.$error.required"
+        div ng-show="submitted && teamForm.description.$error"
+          div ng-show="teamForm.description.$error.required"
             i.fa.fa-exclamation-circle  Description is required
     .col-md-3
       label for="riskLevel" Risk Level
-      select.add-width ng-model="customer.riskLevel" name="riskLevel" required=""
+      select.add-width ng-model="item.riskLevel" name="riskLevel" required=""
         option ng-disabled="true" selected= "true" value="" Risk Level
         option value= "0.05" Low
         option value= "0.35" Medium
@@ -26,7 +25,7 @@
       input.form-control type="text" ng-model="item.amount" name="amount" required="" placeholder= "10000"
       span.validation
         div ng-show="submitted && item.amount.$error"
-          div ng-show="itemForm.middleInitial.$error.required"
+          div ng-show="teamForm.middleInitial.$error.required"
             i.fa.fa-exclamation-circle  Amount is required
 
   .row-spacing.row
@@ -40,21 +39,21 @@
         select.year.inline ng-model="item.year" ng-options="year.year for year in years track by year.value" name="pawnDate" required=""
           option.inline ng-disabled="true" value=""  Year
       span.validation
-        div ng-show="submitted && itemForm.pawnDate.$error.required"
+        div ng-show="submitted && teamForm.pawnDate.$error.required"
           i.fa.fa-exclamation-circle  Pawn Date is required
 
     .no-padding.col-md-4
       label.block for="dueDate" Due Date
       div ng-model= "item.dueDate"
-        select.month ng-model="item.month" ng-options="month.name for month in months track by month.value" name="dueDate" required=""
+        select.month ng-model="item.monthDue" ng-options="month.name for month in months track by month.value" name="dueDate" required=""
           option ng-disabled="true" selected= "true" value="" Month
-        select.day.inline ng-model="item.day" ng-options="day.day for day in days track by day.value" name="dueDate" required=""
+        select.day.inline ng-model="item.dayDue" ng-options="day.day for day in days track by day.value" name="dueDate" required=""
           option ng-disabled="true" required= "" value=""  Day
-        select.year.inline ng-model="item.year" ng-options="year.year for year in years track by year.value" name="dueDate" required=""
+        select.year.inline ng-model="item.yearDue" ng-options="year.year for year in years track by year.value" name="dueDate" required=""
           option.inline ng-disabled="true" value=""  Year
       span.validation
-        div ng-show="submitted && itemForm.dueDate.$error.required"
+        div ng-show="submitted && teamForm.dueDate.$error.required"
           i.fa.fa-exclamation-circle  Due Date is required
 
     .col-md-2
-      button.outline-button.padding ng-show="$last" ng-click="addNewItem()" type="submit"  Add Item
+      button.padding ng-show="$last" type="button" ng-click="addNewItem()"  Add Item
