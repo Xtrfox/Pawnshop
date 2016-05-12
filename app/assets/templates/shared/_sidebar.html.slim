@@ -15,7 +15,7 @@
       a ui-sref="index" title="index"
         i.fa.fa-home.white
         | Home
-    li ui-sref-active="active"
+    li ng-class="{active: $state.includes('customer')}" ui-sref-active="active"
       a ui-sref="manage" title="manage"
         i.fa.fa-bar-chart-o.white
         | Manage

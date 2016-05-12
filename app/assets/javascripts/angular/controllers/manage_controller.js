@@ -15,15 +15,19 @@ Pawn.controller('ManageController',
         $scope.showEditDelete = false;
       }
     };
-    $scope.removecustomer= function(){
+    $scope.removecustomer = function(){
       checkedcustomers=_.filter($scope.customers, function(e){ return e.checked ===true;});
       $scope.customers = _.difference($scope.customers, checkedcustomers);
     };
-    $scope.clickedcustomer=function(customer){
+    $scope.clickedcustomer = function(customer){
       $scope.checkedcustomer=customer;
-      $state.transitionTo('manage.customer.detail')
+      $state.transitionTo('customer.detail')
     };
     $scope.changedSelection = function(sel){
       $scope.selection = sel;
+    };
+    $scope.clickedsettle = function(customer) {
+      $scope.clickedcustomer = customer;
+      $state.transitionTo('customer.settle')
     };
 });

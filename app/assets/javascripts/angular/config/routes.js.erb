@@ -17,6 +17,35 @@ Pawn.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
       controller: 'CustomerController'
 
     })
+
+    .state('customer', {
+      abstract: true,
+      url: '/customer',
+      templateUrl: '<%=asset_path("main/subnavbar.html") %>',
+      controller: 'SubNavbarController'
+    })
+
+    .state('customer.detail', {
+      url: '/detail',
+      views: {
+        'content': {
+          templateUrl: '<%= asset_path("main/customer/detail.html") %>',
+          controller: 'ManageController',
+        }
+      }
+    })
+
+    .state('customer.settle', {
+      url: '/settle',
+      views: {
+        'content': {
+          templateUrl: '<%= asset_path("main/customer/settle.html") %>',
+          controller: 'ManageController',
+        }
+      }
+    })
+
+
     $urlRouterProvider.otherwise('/');
     $locationProvider.html5Mode({
     enabled: true,

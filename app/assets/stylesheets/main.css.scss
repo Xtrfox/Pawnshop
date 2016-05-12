@@ -178,7 +178,7 @@ body {
   }
 
   .line2 {
-    margin-top: 25px;
+    margin-top: 40px;
   }
 
   input[type="text"],
@@ -319,6 +319,40 @@ body {
     width: 28%;
     margin-right: 10px;
   }
+}
+
+
+//customer/detail
+
+
+.add-customer-options {
+  color: #2c3e50;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Open sans;
+  font-size: 18px !important;
+  font-weight: 400;
+  margin-right: 20px;
+  margin-top: 0;
+  padding: 25px 0;
+
+  @media (max-width: 480px) {
+    font-size: 14.5px !important;
+  }
+
+  @media (max-width: 767px) and (min-width: 480px) {
+    font-size: 16px !important;
+  }
+
+}
+
+.btn-wide {
+  min-width: 140px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.add-right {
+  margin-right: 3%;
 }
 
 select {
