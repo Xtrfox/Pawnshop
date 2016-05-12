@@ -78,6 +78,37 @@
       .col-md-3
         label for="landlineNumber" Landline Number
         p 369-5321
+    .row
+      .table-responsive.table_margin
+        h4 Items
+        table.table.table-striped.table-hover.table-bordered
+          thead
+            tr
+              th
+              th Item ID
+              th Description
+              th Amount
+              th Pawn Date
+              th Due Date
+              th Status
+          tr.pointer-cursor.search-table ng-repeat="a in data"
+            td
+              input.fa-2x type="checkbox" ng-model="customer.checked"
+            td
+              | {{a.items[0].id}}
+            td
+              | {{a.items.description}}
+            td
+              | {{a.items.amount}}
+            td
+              | {{a.items.pawn_date}}
+            td
+              | {{a.items.due_date}}
+            td
+              | {{a.items.status}}
+
+
+
 
     .row-spacing
       button.btn.btn-primary.btn-wide.add-right type="button" ng-click="clickedsettle(customer)" Settle

@@ -1,12 +1,18 @@
 Pawn.controller('ManageController',
-  function($scope, $state, DemoService, $location) {
-    $scope.customers = DemoService.customers();
+  function($scope, $state,CustomerService, $location) {
+    // $scope.customers = CustomerService.getAllCustomer();
     $scope.showEditDelete = false;
     $scope.selection = "edit";
 
     _.each($scope.customers, function(e){
       e.checked = false;
     });
+
+    CustomerService.getAllCustomer()
+    .then(function(data){
+      console.log(data);
+      $scope.data = data;
+    })
 
     $scope.triggerShowEditDelete = function() {
       if (_.size(_.filter($scope.customers, function(e) { return e.checked === true; })) > 0) {
@@ -30,4 +36,6 @@ Pawn.controller('ManageController',
       $scope.clickedcustomer = customer;
       $state.transitionTo('customer.settle')
     };
+
+    
 });

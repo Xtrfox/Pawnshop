@@ -1,6 +1,13 @@
 Pawn.controller('SubNavbarController',
-  function($scope, DemoService, $state) {
+  function($scope, CustomerService, $state) {
     $scope.tab = $state.current.name;
+
+
+    CustomerService.getCustomer()
+    .then(function(data){
+      console.log(data);
+    })
+
 
 
   if($scope.tab === 'customer.detail') {

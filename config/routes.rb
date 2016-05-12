@@ -7,6 +7,7 @@ Rails.application.routes.draw do
    root :to => "home#index"
    post '/customers/create' => 'customers#create'
    get '/customers/all_customers' => 'customers#all_customers'
+   get '/customers/:customer_id' => 'customers#get_customer'
 
 
 

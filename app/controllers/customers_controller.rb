@@ -35,6 +35,13 @@ class CustomersController < ApplicationController
     }
   end
 
+  def get_customer
+    customer = Customer.find(params[:customer_id])
+
+    render json: customer
+  end
+
+
   def all_customers
 
     Rails.logger.info('hello')

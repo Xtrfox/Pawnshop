@@ -30,28 +30,22 @@
           th Description
           th Amount
           th Status
-          th Date Added
-      tr.pointer-cursor.search-table ng-repeat="customer in customers | filter:search"
+      tr.pointer-cursor.search-table ng-repeat="a in data"
         td
           input.fa-2x type="checkbox" ng-change="triggerShowEditDelete()" ng-model="customer.checked" /
         td ng-click="clickedcustomer(customer)"
-          | {{customer.customer_id}}
+          | {{a.customer.id}}
         td ng-click="clickedcustomer(customer)"
-          | {{customer.first_name}}
+          | {{a.customer.first_name}}
         td ng-click="clickedcustomer(customer)"
-          | {{customer.last_name}}
+          | {{a.customer.last_name}}
         td ng-click="clickedcustomer(customer)"
-          | {{customer.mobile}}
+          | {{a.customer.city}}
         td ng-click="clickedcustomer(customer)"
-          | {{customer.item_no}}
+          | {{a.items[0].id}}
         td ng-click="clickedcustomer(customer)"
-          | {{customer.description}}
+          | {{a.items[0].description}}
         td ng-click="clickedcustomer(customer)"
-          | {{customer.amount}}
+          | {{a.items[0].amount}}
         td ng-click="clickedcustomer(customer)"
-          | {{customer.status}}
-        td ng-click="clickedcustomer(customer)"
-          | {{customer.date_added}}
-      tr ng-if="!(customers | filter:search).length"
-        td.centered-contents colspan="6"
-          h5 No Results found
+          | {{a.items[0].status}}
