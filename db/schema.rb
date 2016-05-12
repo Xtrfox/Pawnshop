@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160509144537) do
+ActiveRecord::Schema.define(version: 20160512024633) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,16 +24,14 @@ ActiveRecord::Schema.define(version: 20160509144537) do
     t.string   "street_address_2"
     t.string   "city"
     t.integer  "postal_code"
-    t.integer  "mobile"
-    t.integer  "landline"
+    t.integer  "mobile",           limit: 8
+    t.integer  "landline",         limit: 8
     t.datetime "bday"
-    t.integer  "customer_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "items", force: true do |t|
-    t.integer  "item_id"
     t.integer  "transaction_id"
     t.string   "category"
     t.text     "description"
@@ -45,6 +43,7 @@ ActiveRecord::Schema.define(version: 20160509144537) do
     t.text     "history"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "customer_id"
   end
 
   create_table "transactions", force: true do |t|

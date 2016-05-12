@@ -1,5 +1,5 @@
 angular.module('Pawn.controllers')
-  .controller('CustomerController', function($scope, $state) {
+  .controller('CustomerController', function($scope, $state, CustomerService) {
 
     $scope.totaldays = 31;
 
@@ -36,6 +36,11 @@ angular.module('Pawn.controllers')
       return(dat)
     }
 
+    CustomerService.getAllCustomer()
+    .then(function(d){
+      console.log(d)
+    })
+    
     $scope.submitForm= function(data) {
       items = []
       _.each($scope.items, function(e, i, l) {
@@ -47,8 +52,6 @@ angular.module('Pawn.controllers')
           "description": e.description,
           "pawnDate": convertedPawnDate,
           "dueDate": convertedDueDate,
-          "monthDue": e.monthDue.name,
-          "yearDue": e.yearDue.value,
           "riskLevel": e.riskLevel
         }
         items.push(item)
@@ -68,7 +71,7 @@ angular.module('Pawn.controllers')
         "items": items
       }
 
-      CustomerService.createShipping(data)
+      CustomerService.createCustomer(data)
       .then(function(d){
         console.log(d)
       })

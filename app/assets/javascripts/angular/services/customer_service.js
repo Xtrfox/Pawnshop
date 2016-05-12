@@ -4,7 +4,7 @@ angular.module('Pawn.services')
       var d = $q.defer();
       $http({
         method: 'POST',
-        url: '/customer/create',
+        url: '/customers/create',
         data: data
       }).success(function(data){
         d.resolve(data);
@@ -12,5 +12,19 @@ angular.module('Pawn.services')
 
       return d.promise;
     }
+
+    this.getAllCustomer = function() {
+
+      var d = $q.defer();
+      $http({
+        method: 'GET',
+        url: '/customers/all_customers'
+      }).success(function(data){
+        d.resolve(data);
+      });
+
+      return d.promise;
+    }
+
 
 });

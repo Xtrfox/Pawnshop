@@ -5,8 +5,10 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
    root :to => "home#index"
-   get '*path' => 'home#index'
-   post '/customer/create' => 'customers#create'
+   post '/customers/create' => 'customers#create'
+   get '/customers/all_customers' => 'customers#all_customers'
+
+
 
 
   # Example of regular route:
@@ -57,5 +59,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-
+  get '*path' => 'home#index'
 end
