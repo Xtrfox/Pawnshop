@@ -36,6 +36,16 @@ Pawn.controller('ManageController',
       $scope.clickedcustomer = customer;
       $state.transitionTo('customer.settle')
     };
+    $scope.clickedpawn = function(customer) {
+      $scope.clickedcustomer = customer;
+      $state.transitionTo('customer.pawn')
+    }
 
-    
+    // frontend - controller.js
+    // controller -service
+    // service - routes
+    // routes - controller.rb
+    // controller.rb - pg
+
+
 });

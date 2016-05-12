@@ -346,6 +346,36 @@ body {
 
 }
 
+//customer.Pawn
+.add-padding-right {
+  padding-right: 15px;
+}
+.add-padding-left {
+  padding-left: 15px;
+}
+#pawn {
+  .pawn {
+    border-bottom: 1px solid $darkblue;
+    border-top: 1px solid $darkblue;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+  }
+  .border{
+    border-bottom: 1px solid $darkblue;
+    padding-bottom: 5px;
+  }
+  .remove-border {
+    border: none !important;
+  }
+  .remove-border>td {
+    border-top:none;
+  }
+  p {
+    font-size: 14px;
+  }
+}
+
 .btn-wide {
   min-width: 140px;
   padding-left: 30px;
