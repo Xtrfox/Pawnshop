@@ -32,14 +32,18 @@ Pawn.controller('ManageController',
     $scope.changedSelection = function(sel){
       $scope.selection = sel;
     };
-    $scope.clickedsettle = function(customer) {
-      $scope.clickedcustomer = customer;
-      $state.transitionTo('customer.settle')
-    };
-    $scope.clickedpawn = function(customer) {
+    $scope.clickedGenerate = function(customer) {
       $scope.clickedcustomer = customer;
       $state.transitionTo('customer.pawn')
+    };
+    $scope.clickedSettle = function(customer) {
+      $scope.clickedcustomer = customer;
+      $state.transitionTo('customer.settle')
     }
+    // $scope.clickedDone = function() {
+    //   $state.transitionTo('manage')
+    // }
+
 
     // frontend - controller.js
     // controller -service

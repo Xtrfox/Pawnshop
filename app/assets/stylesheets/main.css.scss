@@ -147,7 +147,7 @@ body {
       font-size: 21px;
     }
     p {
-      font-size: 18px;
+      font-size: 16px;
     }
   }
 
@@ -353,6 +353,17 @@ body {
 .add-padding-left {
   padding-left: 15px;
 }
+
+.edit-panel {
+
+  label {
+    font-weight: 700;
+  }
+
+  p {
+    font-weight: 300;
+  }
+}
 #pawn {
   .pawn {
     border-bottom: 1px solid $darkblue;
@@ -374,6 +385,9 @@ body {
   p {
     font-size: 14px;
   }
+}
+.center {
+  text-align: center;
 }
 
 .btn-wide {

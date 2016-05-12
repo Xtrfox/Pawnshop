@@ -1,1 +1,70 @@
-//to be completed
+.app-body#pawn
+  h4.pawn Receipt
+  .row
+    .col-md-4
+      label for= "ticketID" Ticket ID:
+      p 456
+    .col-md-4
+      label for= "pawnDate" Pawn Date:
+      p Nov 11, 2011
+    .col-md-4
+      label for= "dueDate" Due Date:
+      p Dec 11, 2011
+  .row
+    .col-md-4
+      label for="customerName" Customer:
+      p Lofranco, Life Christian M
+    .col-md-8
+      label for="address" Address:
+      p 16-F, General Julian Street, Barangka, Marikina city
+  .row
+    .col-md-4
+      label for="mobile" Mobile:
+      p 09175319365
+    .col-md-4
+      label for= "landline" Landline:
+      p 4448899
+  table.table.table-striped.table-responsive
+    thead
+      tr
+        th Category
+        th Description
+        th Loan Amount
+        th Rate
+        th Interest
+    tr
+      td Jewelry
+      td Gold ring, 24k
+      td 10000.00
+      td 3.5%
+      td 350.00
+    tr
+      td Electronics
+      td Nokia 2360, black, with battery
+      td 1500.00
+      td 1.5%
+      td 22.50
+    tr
+      th # of items returned:
+      td 2
+      th Total Loan:
+      td 11872.50
+      td
+      tr
+        td.remove-border.remove-border
+        td.remove-border
+        th.remove-border Service Charge:
+        td.remove-border 1780.9988
+      tr
+        td.remove-border
+        td.remove-border
+        th.remove-border Total Amount Due:
+        td.remove-border 13653.38
+      tr
+        td.remove-border
+        td.remove-border
+        th.remove-border Amount Paid:
+        td.remove-border 13653.38
+
+  .row-spacing.center
+    button.btn.btn-primary.btn-wide.add-right type="button" ui-sref="manage" Done
