@@ -21,6 +21,21 @@ Pawn.controller('ManageController',
         $scope.customer = d;
       })
     }
+    $scope.clickedSettle = function() {
+
+      d = {
+        "customer_id": 1,
+        "item_ids": [1],
+        "service_charge": 10,
+        "total": 100,
+        "paid_amount": $scope.amount,
+      }
+
+      CustomerService.settle(d)
+      .then(function(d){
+        console.log(d);
+      })
+    }
 
 
 

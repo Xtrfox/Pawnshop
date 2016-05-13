@@ -38,6 +38,19 @@ angular.module('Pawn.services')
       return d.promise;
     }
 
+    this.settle = function(data) {
+      var d = $q.defer();
+      $http({
+        method: 'POST',
+        url: '/customers/settle',
+        data: data
+      }).success(function(data){
+        d.resolve(data);
+      });
+
+      return d.promise;
+    }
+
 
 
 });

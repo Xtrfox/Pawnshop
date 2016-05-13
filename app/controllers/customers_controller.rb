@@ -45,15 +45,7 @@ class CustomersController < ApplicationController
     render json: response
   end
 
-  def get_item #tried getting item of customer
-    item_id = Customer.find(params[:customer_id]).item.id
-    item = Item.find(item_id)
-    render json: item
-  end
-
   def all_customers
-
-    Rails.logger.info('hello')
     customers = Customer.all
 
     today=Date.today
@@ -76,6 +68,33 @@ class CustomersController < ApplicationController
     end
 
     render json: all_customers
+
+  end
+
+  def settle
+    transaction = Transaction.create(
+                    customer_id: params[:customer_id],
+                    service_charge: params[:service_charge],
+                    total: params[:total],
+                    paid_amount: params[:paid_amount]
+                  )
+    params[:item_ids].each do |ids|
+      item = Item.find(ids)
+      item.transaction_id = transaction.id
+      item.status = "paid"
+      item.save!
+    end
+
+    customer = Customer.find(params[:customer_id])
+    items = Transaction.items
+
+    transact = {
+      :customer => customer,
+      :paid_items => items
+    }
+
+    render json: transact
+
 
   end
 end
