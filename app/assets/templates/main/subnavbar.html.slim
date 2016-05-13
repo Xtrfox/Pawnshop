@@ -1,8 +1,5 @@
-.sub-navbar
+.sub-navbar ng-controller="ManageController"
   h3
-    | {{title}}
-.btn-padding
-  a.add-customer-options ng-repeat="option in navbarOptions" ui-sref-active="activenav" ui-sref=".{{option.link}}"
-    | {{option.label}}
+    | {{customer.first_name}} {{customer.last_name}}
 
 div ui-view="content"
