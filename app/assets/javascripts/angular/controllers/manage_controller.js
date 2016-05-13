@@ -24,6 +24,7 @@ Pawn.controller('ManageController',
 
 
 
+
     $scope.triggerShowEditDelete = function() {
       if (_.size(_.filter($scope.customers, function(e) { return e.checked === true; })) > 0) {
         $scope.showEditDelete = true;

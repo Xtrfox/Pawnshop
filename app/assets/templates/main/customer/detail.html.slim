@@ -48,47 +48,47 @@
       .no-padding.col-md-3
         label for="customerId" Customer Id
         p
-          | {{customer.id}}
+          | {{customer.customer.id}}
     .row
       .no-padding.col-md-3
         label for="firstName" First Name
         p
-          | {{customer.first_name}}
+          | {{customer.customer.first_name}}
       .col-md-3
         label for="lastName" Last Name
         p
-          | {{customer.last_name}}
+          | {{customer.customer.last_name}}
       .no-padding.col-md-3
         label for="middleInitial" Middle Initial
         p
-          | {{customer.middle_initial}}
+          | {{customer.customer.middle_initial}}
       .col-md-3
         label for="birthday" Birthday
-        p
-          | {{customer.bday}}
+        p ng-bind= "customer.customer.bday | date:'MMMM d, yyyy'"
+          | {{customer.customer.bday}}
     .row
       .no-padding.col-md-6
         label for="address" Address
         p
-          | {{customer.street_address_1}}
-          | {{customer.street_address_2}}
+          | {{customer.customer.street_address_1}}
+          | {{customer.customer.street_address_2}}
       .no-padding.col-md-3
         label for="city" City
         p
-          | {{customer.city}}
+          | {{customer.customer.city}}
       .no-padding.col-md-3
         label for="postalcode" Postal Code
         p
-          | {{customer.postal_code}}
+          | {{customer.customer.postal_code}}
     .row
       .col-md-3
         label for="mobile" Mobile Number
         p
-          | {{customer.mobile}}
+          | {{customer.customer.mobile}}
       .col-md-3
         label for="landline" Landline Number
         p
-          | {{customer.landline}}
+          | {{customer.customer.landline}}
     .row
       .table-responsive.table_margin
         h4 Items
@@ -102,21 +102,21 @@
               th Pawn Date
               th Due Date
               th Status
-          tr.pointer-cursor.search-table ng-repeat="a in data" ng-model="customer.checked"
+          tr.pointer-cursor.search-table ng-repeat="a in customer.item" ng-model="customer.checked"
             td
               input.fa-2x type="checkbox"
             td
-              | {{a.customer.id}}
+              | {{a.id}}
             td
-              | {{a.items.description}}
+              | {{a.description}}
             td
-              | {{a.items.amount}}
+              | {{a.amount}}
+            td ng-bind="a.pawn_date | date:'MMMM d, yyyy'"
+              | {{a.pawn_date}}
+            td ng-bind="a.due_date | date: 'MMMM d, yyyy'"
+              | {{a.due_date}}
             td
-              | {{a.items.pawn_date}}
-            td
-              | {{a.items.due_date}}
-            td
-              | {{a.items.status}}
+              | {{a.status}}
 
 
     .row-spacing.center
