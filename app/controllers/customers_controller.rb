@@ -41,6 +41,12 @@ class CustomersController < ApplicationController
     render json: customer
   end
 
+  def get_item #tried getting item of customer
+    item_id = Customer.find(params[:customer_id]).item.id
+    item = Item.find(item_id)
+
+    render json: item
+  end
 
   def all_customers
 
