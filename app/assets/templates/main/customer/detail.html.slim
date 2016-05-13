@@ -12,7 +12,7 @@
     .row
       .no-padding.col-md-3
         label for="firstName" First Name
-        input.form-control type="text" value="Paolo"
+        input.form-control type="text" value="{{d.first_name}}"
       .col-md-3
         label for="lastName" Last Name
         input.form-control type="text" value="Agloro"
@@ -47,37 +47,48 @@
     .row-spacing.row
       .no-padding.col-md-3
         label for="customerId" Customer Id
-        p 092199
+        p
+          | {{customer.id}}
     .row
       .no-padding.col-md-3
         label for="firstName" First Name
-        p Paolo
+        p
+          | {{customer.first_name}}
       .col-md-3
         label for="lastName" Last Name
-        p Agloro
+        p
+          | {{customer.last_name}}
       .no-padding.col-md-3
         label for="middleInitial" Middle Initial
-        p M
+        p
+          | {{customer.middle_initial}}
       .col-md-3
         label for="birthday" Birthday
-        p May 06 1993
+        p
+          | {{customer.bday}}
     .row
       .no-padding.col-md-6
         label for="address" Address
-        p Ateneo de Manila University
+        p
+          | {{customer.street_address_1}}
+          | {{customer.street_address_2}}
       .no-padding.col-md-3
         label for="city" City
-        p Quezon
+        p
+          | {{customer.city}}
       .no-padding.col-md-3
         label for="postalcode" Postal Code
-        p 1803
+        p
+          | {{customer.postal_code}}
     .row
       .col-md-3
-        label for="mobileNumber" Mobile Number
-        p 09159169999
+        label for="mobile" Mobile Number
+        p
+          | {{customer.mobile}}
       .col-md-3
-        label for="landlineNumber" Landline Number
-        p 369-5321
+        label for="landline" Landline Number
+        p
+          | {{customer.landline}}
     .row
       .table-responsive.table_margin
         h4 Items
@@ -91,9 +102,9 @@
               th Pawn Date
               th Due Date
               th Status
-          tr.pointer-cursor.search-table ng-repeat="a in data"
+          tr.pointer-cursor.search-table ng-repeat="a in data" ng-model="customer.checked"
             td
-              input.fa-2x type="checkbox" ng-model="customer.checked"
+              input.fa-2x type="checkbox"
             td
               | {{a.customer.id}}
             td

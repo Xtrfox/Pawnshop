@@ -11,14 +11,14 @@ Pawn.controller('ManageController',
 
     CustomerService.getAllCustomer()
     .then(function(data){
-      console.log(data);
       $scope.data = data;
     })
 
     if($state.$current.includes["customer.detail"] === true) {
       CustomerService.getCustomer($stateParams.customer_id)
       .then(function(d){
-        console.log(d)
+        console.log(d);
+        $scope.customer = d;
       })
     }
 
