@@ -1,8 +1,9 @@
 Pawn.controller('ManageController',
-  function($scope, $state,CustomerService, $location) {
+  function($scope, $state,CustomerService, $location, $stateParams) {
     // $scope.customers = CustomerService.getAllCustomer();
     $scope.showEditDelete = false;
     $scope.selection = "edit";
+
 
     _.each($scope.customers, function(e){
       e.checked = false;
@@ -14,12 +15,23 @@ Pawn.controller('ManageController',
       $scope.data = data;
     })
 
+    if($state.$current.includes["customer.detail"] === true) {
+      CustomerService.getCustomer($stateParams.customer_id)
+      .then(function(d){
+        console.log(d)
+      })
+    }
+
+
+
     $scope.triggerShowEditDelete = function() {
       if (_.size(_.filter($scope.customers, function(e) { return e.checked === true; })) > 0) {
         $scope.showEditDelete = true;
       } else {
         $scope.showEditDelete = false;
       }
+
+
     };
     $scope.removecustomer = function(){
       checkedcustomers=_.filter($scope.customers, function(e){ return e.checked ===true;});
@@ -27,7 +39,7 @@ Pawn.controller('ManageController',
     };
     $scope.clickedcustomer = function(customer){
       $scope.checkedcustomer=customer;
-      $state.transitionTo('customer.detail')
+      $state.go('customer.detail', {customer_id: customer.customer.id});
     };
     $scope.changedSelection = function(sel){
       $scope.selection = sel;

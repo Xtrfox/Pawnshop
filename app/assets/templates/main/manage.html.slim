@@ -32,20 +32,20 @@
           th Status
       tr.pointer-cursor.search-table ng-repeat="a in data"
         td
-          input.fa-2x type="checkbox" ng-change="triggerShowEditDelete()" ng-model="customer.checked" /
-        td ng-click="clickedcustomer(customer)"
+          input.fa-2x type="checkbox" ng-change="triggerShowEditDelete()" ng-model="customer.checked"
+        td ng-click="clickedcustomer(a)"
           | {{a.customer.id}}
-        td ng-click="clickedcustomer(customer)"
+        td ng-click="clickedcustomer(a)"
           | {{a.customer.first_name}}
-        td ng-click="clickedcustomer(customer)"
+        td ng-click="clickedcustomer(a)"
           | {{a.customer.last_name}}
-        td ng-click="clickedcustomer(customer)"
+        td ng-click="clickedcustomer(a)"
           | {{a.customer.city}}
-        td ng-click="clickedcustomer(customer)"
+        td ng-click="clickedcustomer(a)"
           | {{a.items[0].id}}
-        td ng-click="clickedcustomer(customer)"
+        td ng-click="clickedcustomer(a)"
           | {{a.items[0].description}}
-        td ng-click="clickedcustomer(customer)"
+        td ng-click="clickedcustomer(a)"
           | {{a.items[0].amount}}
-        td ng-click="clickedcustomer(customer)"
+        td ng-click="clickedcustomer(a)"
           | {{a.items[0].status}}

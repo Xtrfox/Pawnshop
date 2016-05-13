@@ -26,17 +26,18 @@ angular.module('Pawn.services')
       return d.promise;
     }
 
-    this.getCustomer = function(id) {
-
+    this.getCustomer = function(customer_id) {
       var d = $q.defer();
       $http({
         method: 'GET',
-        url: '/customers/' +id,
-      }).success(function(data) {
+        url: '/customers/detail/' + customer_id
+      }).success(function(data){
         d.resolve(data);
       });
+
       return d.promise;
     }
+
 
 
 });
