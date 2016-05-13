@@ -3,7 +3,8 @@
   .row
     .col-md-4
       label for= "ticketID" Ticket ID:
-      p 456
+      p
+        | {{customer.id}}
     .col-md-4
       label for= "pawnDate" Pawn Date:
       p Nov 11, 2011
@@ -13,17 +14,24 @@
   .row
     .col-md-4
       label for="customerName" Customer:
-      p Lofranco, Life Christian M
+      p
+        | {{customer.last_name}}
+        | {{customer.first_name}}
+        | {{customer.middle_initial}}
     .col-md-8
       label for="address" Address:
-      p 16-F, General Julian Street, Barangka, Marikina city
+      p
+        | {{customer.street_address_1}}
+        | {{customer.street_address_2}}
   .row
     .col-md-4
       label for="mobile" Mobile:
-      p 09175319365
+      p
+        | {{customer.mobile}}
     .col-md-4
       label for= "landline" Landline:
-      p 4448899
+      p
+        | {{customer.landline}}
   table.table.table-striped.table-responsive
     thead
       tr
