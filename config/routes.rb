@@ -9,6 +9,7 @@ Rails.application.routes.draw do
    get '/customers/all_customers' => 'customers#all_customers'
    get '/customers/detail/:customer_id' => 'customers#get_customer'
    post '/customers/settle' => 'customers#settle'
+   get '/customers/all_items' => 'customers#all_items'
 
 
 

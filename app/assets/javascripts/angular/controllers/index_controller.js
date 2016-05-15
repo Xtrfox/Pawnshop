@@ -1,24 +1,6 @@
 angular.module('Pawn.controllers')
-  .controller('IndexController', function($scope) {
+  .controller('IndexController', function($scope, $state, CustomerService, $location, $stateParams) {
 
-    $scope.items = [
-      { 'id': '1',
-        'category': 'Jewelry',
-        'description': 'Gold ring',
-        'riskLevel': 'High',
-        'amount': '500' },
-        { 'id': '2',
-          'category': 'Jewelry',
-          'description': 'Gold ring with 1 carat diamond',
-          'riskLevel': 'Very High',
-          'amount': '30000' },
-        { 'id': '3',
-          'category': 'Jewelry',
-          'description': 'Gold Ring',
-          'riskLevel': 'Medium',
-          'amount': '5000'},
-
-    ];
     $scope.add = function() {
       $scope.items.push({'id':$scope.id, 'category': $scope.category, 'description': $scope.description,
       'riskLevel': $scope.riskLevel, 'amount': $scope.amount});
@@ -28,6 +10,30 @@ angular.module('Pawn.controllers')
       $scope.riskLevel = '';
       $scope.amount = '';
     }
+
+    CustomerService.allItem()
+    .then(function(data){
+      console.log(data);
+
+      var log = [];
+      angular.forEach(data, function(data) {
+        if (data.risk_level == 0.015) {
+          data.risk_level = "Low"
+        }
+        else if(data.risk_level == 0.035) {
+          data.risk_level = "Medium"
+        }
+        else if(data.risk_level == 0.0575) {
+          data.risk_level = "High"
+        }
+        else {
+          data.risk_level = "Very High"
+        }
+
+      });
+      $scope.items = data;
+
+    })
 
 
 });

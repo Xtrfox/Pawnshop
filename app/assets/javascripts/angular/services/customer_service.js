@@ -51,6 +51,18 @@ angular.module('Pawn.services')
       return d.promise;
     }
 
+    this.allItem = function() {
+      var d = $q.defer();
+      $http({
+        method: 'GET',
+        url: '/customers/all_items'
+      }).success(function(data){
+        d.resolve(data);
+      });
+
+      return d.promise;
+    }
+
 
 
 });

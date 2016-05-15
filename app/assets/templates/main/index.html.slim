@@ -1,8 +1,9 @@
 .sub-navbar.bg-white
   h3 Home
-.app-body
-  input.row-space-4 type="text" ng-model="searchKeyword" placeholder= "Search"
-
+.app-body.employee-list-bar.btn-padding
+  .form-group.inline.pull-left.add-margin-bottom
+    input.form-control.search-member placeholder="search" type="search" ng-model="searchKeyword"
+    span.input-icon.ss-icon.ss-symbolicons-line.ss-search
   table.table.table-bordered
     thead
       tr
@@ -20,6 +21,6 @@
         td
           | {{item.description}}
         td
-          | {{item.riskLevel}}
+          | {{item.risk_level}}
         td
           | {{item.amount}}
