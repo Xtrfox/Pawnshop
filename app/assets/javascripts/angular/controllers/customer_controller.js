@@ -66,7 +66,7 @@ angular.module('Pawn.controllers')
         "street_address_2": $scope.customer.line2,
         "postal_code": $scope.customer.postalcode,
         "city": $scope.customer.city,
-        "mobile_number": $scope.customer.mobileNumber,
+        "mobile": $scope.customer.mobile,
         "landline": $scope.customer.landline,
         "items": items
       }
@@ -75,5 +75,6 @@ angular.module('Pawn.controllers')
       .then(function(d){
         console.log(d)
       })
+      $state.go('manage');
     }
   });

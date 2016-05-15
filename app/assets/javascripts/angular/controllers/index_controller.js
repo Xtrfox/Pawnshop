@@ -15,7 +15,6 @@ angular.module('Pawn.controllers')
     .then(function(data){
       console.log(data);
 
-      var log = [];
       angular.forEach(data, function(data) {
         if (data.risk_level == 0.015) {
           data.risk_level = "Low"

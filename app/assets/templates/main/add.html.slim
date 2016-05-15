@@ -2,10 +2,6 @@
   form name= "teamForm" ng-submit="submitForm();" novalidate=""
     #member-form
       h5 Customer {{ $index + 1 }}
-      .row
-        .no-padding.col-md-3
-          label for="employeeId" Customer Id
-          input.form-control type="text" ng-model="customer.employeeId" name= "employeeId"
       .row-spacing.row
         .no-padding.col-md-3
           label for="firstName" First Name
@@ -67,20 +63,20 @@
               div ng-show="teamForm.city.$error.required"
                 i.fa.fa-exclamation-circle  City is required
         .col-md-3
-          label for="mobileNumber" Mobile Number
-          input.form-control type="text" ng-model="customer.mobileNumber" name= "mobileNumber" required= "" placeholder= "091XXXXXXXX" ng-pattern="/^\d{11}?$/"
+          label for="mobile" Mobile Number
+          input.form-control type="text" ng-model="customer.mobile" name= "mobile" required= "" placeholder= "091XXXXXXXX" ng-pattern="/^\d{11}?$/"
           span.validation
-            div ng-show="submitted && teamForm.mobileNumber.$error"
-              div ng-show="teamForm.mobileNumber.$error.required"
+            div ng-show="submitted && teamForm.mobile.$error"
+              div ng-show="teamForm.mobile.$error.required"
                 i.fa.fa-exclamation-circle  Mobile number is required
-              div ng-show="teamForm.mobileNumber.$error.pattern"
+              div ng-show="teamForm.mobile.$error.pattern"
                 i.fa.fa-exclamation-circle  Number must be 11 digits in length
         .col-md-3
-          label for="mobileNumber" Landline Number
-          input.form-control type="text" ng-model="customer.landline" name= "landline" required= "" placeholder= "321-456"
+          label for="landline" Landline Number
+          input.form-control type="text" ng-model="customer.landline" name= "landline" required= "" placeholder= "321456"
           span.validation
-            div ng-show="submitted && teamForm.landlineNumber.$error"
-              div ng-show="teamForm.landlineNumber.$error.required"
+            div ng-show="submitted && teamForm.landline.$error"
+              div ng-show="teamForm.landline.$error.required"
                 i.fa.fa-exclamation-circle  Landline number is required
 
     .addmore.add-margin-top
