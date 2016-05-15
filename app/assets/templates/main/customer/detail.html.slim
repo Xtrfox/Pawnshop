@@ -37,10 +37,10 @@
 
     .row
       .col-md-3
-        label for="mobileNumber" Mobile Number
+        label for="mobile" Mobile Number
         input.form-control type="text" value="09159169999"
       .col-md-3
-        label for="mobileNumber" Landline Number
+        label for="landline" Landline Number
         input.form-control type="text" value="369-5321"
     //
   .edit-panel ng-switch-when="edit"
@@ -97,26 +97,29 @@
             tr
               th
               th Item ID
+              th Category
               th Description
               th Amount
               th Pawn Date
               th Due Date
               th Status
-          tr.pointer-cursor.search-table ng-repeat="a in customer.item" ng-model="customer.checked"
+          tr.pointer-cursor.search-table ng-repeat="item in customer.item"
             td
-              input.fa-2x type="checkbox"
+              input.fa-2x id="{{item.id}}" type="checkbox" name="group" ng-model="selected.ids[item.id]" ng-change="choose()"
             td
-              | {{a.id}}
+              | {{item.id}}
             td
-              | {{a.description}}
+              | {{item.category}}
             td
-              | {{a.amount}}
-            td ng-bind="a.pawn_date | date:'MMMM d, yyyy'"
-              | {{a.pawn_date}}
-            td ng-bind="a.due_date | date: 'MMMM d, yyyy'"
-              | {{a.due_date}}
+              | {{item.description}}
             td
-              | {{a.status}}
+              | {{item.amount}}
+            td ng-bind="item.pawn_date | date:'MMMM d, yyyy'"
+              | {{item.pawn_date}}
+            td ng-bind="item.due_date | date: 'MMMM d, yyyy'"
+              | {{item.due_date}}
+            td
+              | {{item.status}}
 
 
     .row-spacing.center

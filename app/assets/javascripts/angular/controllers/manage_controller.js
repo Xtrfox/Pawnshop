@@ -56,18 +56,49 @@ Pawn.controller('ManageController',
     $scope.changedSelection = function(sel){
       $scope.selection = sel;
     };
-    $scope.clickedGenerate = function(customer) {
-      $scope.checkedcustomer = customer;
-      $state.go('customer.pawn', {customer_id: customer.customer.id});
-    };
 
     $scope.clickedSettle = function(customer) {
       $scope.checkedcustomer = customer;
       $state.go('customer.settle', {customer_id: customer.customer.id});
     };
-    // $scope.clickedDone = function() {
-    //   $state.transitionTo('manage')
-    // }
+
+    CustomerService.allItem()
+    .then(function(data){
+      $scope.items_all = data;
+    })
+    pro_checked_items = []
+
+    $scope.selected =
+    {
+      ids: {"1": false}
+    };
+
+    $scope.choose = function() {
+    checked_items = []
+
+    c=Object.keys($scope.selected.ids)
+    .filter(function(k){return $scope.selected.ids[k]})
+    .map(Number)
+
+    _.each(c, function(el, i,l) {
+      checked_item = _.filter($scope.items_all, function(m) { return m.id == el})
+      checked_items.push(checked_item)
+    })
+
+    pro_checked_items = _.flatten(checked_items)
+  }
+
+    $scope.clickedGenerate = function(customer) {
+      $scope.checkedcustomer = customer;
+
+      if(checked_items.length>0) {
+        $scope.customer.item = checked_items;
+      }
+     console.log(checked_items);
+
+      //$state.go('customer.pawn', {customer_id: customer.customer.id});
+    };
+
 
 
     // frontend - controller.js
