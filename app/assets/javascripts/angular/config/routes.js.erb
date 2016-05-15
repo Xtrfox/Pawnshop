@@ -20,12 +20,12 @@ Pawn.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 
     .state('customer', {
       abstract: true,
-      url: '/customer',
+      url: '/customer/:customer_id',
       templateUrl: '<%=asset_path("main/subnavbar.html") %>'
     })
 
     .state('customer.detail', {
-      url: '/detail/:customer_id',
+      url: '/detail',
       views: {
         'content': {
           templateUrl: '<%= asset_path("main/customer/detail.html") %>',
@@ -35,7 +35,7 @@ Pawn.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     })
 
     .state('customer.settle', {
-      url: '/settle',
+      url: '/detail/settle',
       views: {
         'content': {
           templateUrl: '<%= asset_path("main/customer/settle.html") %>',
@@ -45,7 +45,7 @@ Pawn.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     })
 
     .state('customer.pawn', {
-      url: '/pawn',
+      url: '/detail/pawn',
       views: {
         'content': {
           templateUrl: '<%= asset_path("main/customer/pawn.html") %>',

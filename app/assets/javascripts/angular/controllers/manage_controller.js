@@ -14,10 +14,9 @@ Pawn.controller('ManageController',
       $scope.data = data;
     })
 
-    if($state.$current.includes["customer.detail"] === true) {
+    if($state.$current.includes["customer"] === true) {
       CustomerService.getCustomer($stateParams.customer_id)
       .then(function(d){
-        console.log(d);
         $scope.customer = d;
       })
     }
@@ -36,9 +35,6 @@ Pawn.controller('ManageController',
         console.log(d);
       })
     }
-
-
-
 
     $scope.triggerShowEditDelete = function() {
       if (_.size(_.filter($scope.customers, function(e) { return e.checked === true; })) > 0) {
@@ -61,13 +57,14 @@ Pawn.controller('ManageController',
       $scope.selection = sel;
     };
     $scope.clickedGenerate = function(customer) {
-      $scope.clickedcustomer = customer;
-      $state.transitionTo('customer.pawn')
+      $scope.checkedcustomer = customer;
+      $state.go('customer.pawn', {customer_id: customer.customer.id});
     };
+
     $scope.clickedSettle = function(customer) {
-      $scope.clickedcustomer = customer;
-      $state.transitionTo('customer.settle')
-    }
+      $scope.checkedcustomer = customer;
+      $state.go('customer.settle', {customer_id: customer.customer.id});
+    };
     // $scope.clickedDone = function() {
     //   $state.transitionTo('manage')
     // }

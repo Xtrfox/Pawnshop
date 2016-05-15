@@ -37,6 +37,17 @@ angular.module('Pawn.services')
 
       return d.promise;
     }
+    //
+    // this.getTicket = function(customer_id) {
+    //   var d = $q.defer();
+    //   $http({
+    //     method: 'GET',
+    //     url: '/customers/pawn/' + customer_id
+    //   }).success(function(data) {
+    //     d.resolve(data);
+    //   });
+    //   return d.promise;
+    // }
 
     this.settle = function(data) {
       var d = $q.defer();
