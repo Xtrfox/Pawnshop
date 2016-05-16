@@ -20,8 +20,9 @@ Pawn.controller('ManageController',
         $scope.customer = d;
       })
     }
-    $scope.clickedSettle = function() {
+    $scope.clickedSettle = function(customer) {
 
+      $scope.checkedcustomer = customer;
       d = {
         "customer_id": 1,
         "item_ids": [1],
@@ -34,7 +35,11 @@ Pawn.controller('ManageController',
       .then(function(d){
         console.log(d);
       })
+
+      $state.go('customer.settle', {customer_id: customer.customer.id});
+
     }
+
 
     $scope.triggerShowEditDelete = function() {
       if (_.size(_.filter($scope.customers, function(e) { return e.checked === true; })) > 0) {
@@ -55,11 +60,6 @@ Pawn.controller('ManageController',
     };
     $scope.changedSelection = function(sel){
       $scope.selection = sel;
-    };
-
-    $scope.clickedSettle = function(customer) {
-      $scope.checkedcustomer = customer;
-      $state.go('customer.settle', {customer_id: customer.customer.id});
     };
 
     CustomerService.allItem()
@@ -100,7 +100,7 @@ Pawn.controller('ManageController',
      $state.go('customer.pawn')
     };
 
-    if($state.$current.includes["customer.pawn"] === true) {
+    if($state.$current.includes["customer.pawn"] === true || $state.$current.includes["customer.settle"] === true ) {
       item_ids = $cookies.get('item_ids')
       data = {
         customer_id: $stateParams.customer_id,
@@ -108,10 +108,29 @@ Pawn.controller('ManageController',
       }
 
       CustomerService.postItems(data)
-      .then(function(d){
-        console.log(d)
+      .then(function(data){
+        $scope.pawn = data
+        console.log(data)
+
+        interests = []
+        total = 0
+        service_charge = .20
+
+        angular.forEach(data.item, function(data) {
+          data.interest = data.amount * data.risk_level
+          total += data.amount + data.interest
+          interests.push(data.interest)
+        });
+        $scope.pawn.item.interests = interests;
+        $scope.total = total
+        $scope.service_charge = total * service_charge
+        $scope.total_amount = total + total * service_charge
+        $scope.number_items = data.item.length
+
+
       })
-    }
+
+  }
 
 
 
