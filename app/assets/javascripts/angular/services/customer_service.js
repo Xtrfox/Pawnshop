@@ -51,6 +51,19 @@ angular.module('Pawn.services')
       return d.promise;
     }
 
+    this.postItems = function(data) {
+      var d = $q.defer();
+      $http({
+        method: 'POST',
+        url: '/customers/post_items',
+        data: data
+      }).success(function(data){
+        d.resolve(data);
+      });
+
+      return d.promise;
+    }
+
     this.allItem = function() {
       var d = $q.defer();
       $http({

@@ -1,5 +1,5 @@
 Pawn.controller('ManageController',
-  function($scope, $state,CustomerService, $location, $stateParams) {
+  function($scope, $state,CustomerService, $location, $stateParams, $cookies) {
     // $scope.customers = CustomerService.getAllCustomer();
     $scope.showEditDelete = false;
     $scope.selection = "edit";
@@ -91,13 +91,28 @@ Pawn.controller('ManageController',
     $scope.clickedGenerate = function(customer) {
       $scope.checkedcustomer = customer;
 
-      if(checked_items.length>0) {
-        $scope.customer.item = checked_items;
-      }
-     console.log(checked_items);
+      item_ids = []
 
-      //$state.go('customer.pawn', {customer_id: customer.customer.id});
+     _.each(pro_checked_items, function(el, i,l) {
+       item_ids.push(el.id)
+     })
+     $cookies.put('item_ids', item_ids);
+     $state.go('customer.pawn')
     };
+
+    if($state.$current.includes["customer.pawn"] === true) {
+      item_ids = $cookies.get('item_ids')
+      data = {
+        customer_id: $stateParams.customer_id,
+        item_ids: item_ids.split(',')
+      }
+
+      CustomerService.postItems(data)
+      .then(function(d){
+        console.log(d)
+      })
+    }
+
 
 
 

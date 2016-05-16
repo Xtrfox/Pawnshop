@@ -8,7 +8,7 @@ class CustomersController < ApplicationController
                   street_address_2: params[:street_address_2],
                   city: params[:city],
                   postal_code: params[:postal_code],
-                  mobile: params[:mobile].to_i,
+                  mobile: params[:mobile],
                   landline: params[:landline].to_i,
                   bday: params[:bday]
                   )
@@ -41,9 +41,36 @@ class CustomersController < ApplicationController
     render json: items
   end
 
+  def post_items
+    items = []
+    params[:item_ids].each do |id|
+      items << Item.find(id)
+    end
+    customer = Customer.find(params[:customer_id])
+    response = {
+      :customer => customer,
+      :item => items
+    }
+
+    render json: response
+  end
+
+
+
   def get_customer
     customer = Customer.find(params[:customer_id])
     items = customer.items
+    today=Date.today
+
+    items.each do |item|
+      if item['due_date'].to_date >= today
+        item.status = 'active'
+      else
+        item.status = 'expired'
+      end
+      item.save!
+    end
+
     response = {
       :customer => customer,
       :item => items
