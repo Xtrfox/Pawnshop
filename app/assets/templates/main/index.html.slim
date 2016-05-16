@@ -12,6 +12,7 @@
        th Description
        th Risk Level
        th Amount
+       th Status
     tbody
       tr ng-repeat= "item in items | filter: searchKeyword"
         th
@@ -24,3 +25,5 @@
           | {{item.risk_level}}
         td
           | {{item.amount}}
+        td
+          | {{item.status}}

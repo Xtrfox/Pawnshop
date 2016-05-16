@@ -64,9 +64,9 @@ class CustomersController < ApplicationController
 
     items.each do |item|
       if item['due_date'].to_date >= today
-        item.status = 'active'
+        item.status = 'Active'
       else
-        item.status = 'expired'
+        item.status = 'Expired'
       end
       item.save!
     end
