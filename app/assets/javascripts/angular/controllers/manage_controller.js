@@ -20,25 +20,6 @@ Pawn.controller('ManageController',
         $scope.customer = d;
       })
     }
-    $scope.clickedSettle = function(customer) {
-
-      $scope.checkedcustomer = customer;
-      d = {
-        "customer_id": 1,
-        "item_ids": [1],
-        "service_charge": 10,
-        "total": 100,
-        "paid_amount": $scope.amount,
-      }
-
-      CustomerService.settle(d)
-      .then(function(d){
-        console.log(d);
-      })
-
-      $state.go('customer.settle', {customer_id: customer.customer.id});
-
-    }
 
 
     $scope.triggerShowEditDelete = function() {
@@ -129,6 +110,67 @@ Pawn.controller('ManageController',
 
 
       })
+
+  }
+
+
+
+  $scope.totaldays = 31;
+
+  $scope.days = [];
+  for (var i = 0; i < $scope.totaldays; i+=1) {
+    $scope.days.push({value: i+1, day: i + 1});
+  }
+
+  $scope.totalyears = 100;
+
+  $scope.years = [];
+  for (var i = 2017; i > 2017 - $scope.totalyears; i--) {
+    $scope.years.push({value: i-1, year: i - 1});
+  }
+
+  $scope.months = [
+    { value: 1, name: 'January' },
+    { value: 2, name: 'February' },
+    { value: 3, name: 'March' },
+    { value: 4, name: 'April' },
+    { value: 5, name: 'May' },
+    { value: 6, name: 'June' },
+    { value: 7, name: 'July' },
+    { value: 8, name: 'August' },
+    { value: 9, name: 'September' },
+    { value: 10, name: 'October' },
+    { value: 11, name: 'November' },
+    { value: 12, name: 'December' }
+  ];
+
+  convertDate = function(d,m,y) {
+    dateconvert = m+'-' + d + '-' + y
+    dat = new Date(dateconvert)
+    return(dat)
+  }
+
+  $scope.clickedExtend = function(item) {
+    console.log(item);
+  }
+
+  $scope.clickedSettle = function(customer) {
+
+    $scope.checkedcustomer = customer;
+    data = {
+      "customer_id": $stateParams.customer_id,
+      "item": item_ids.split(','),
+      "service_charge": .20,
+      "total": $scope.total_amount,
+      "paid_amount": $scope.amount,
+    }
+
+    CustomerService.settle(data)
+    .then(function(d){
+      console.log(d);
+    })
+
+    //$state.go('customer.settle', {customer_id: customer.customer.id});
 
   }
 

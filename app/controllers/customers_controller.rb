@@ -111,10 +111,10 @@ class CustomersController < ApplicationController
                     total: params[:total],
                     paid_amount: params[:paid_amount]
                   )
-    params[:item_ids].each do |ids|
+    params[:item].each do |ids|
       item = Item.find(ids)
       item.transaction_id = transaction.id
-      item.status = "paid"
+      item.status = "Paid"
       item.save!
     end
 
