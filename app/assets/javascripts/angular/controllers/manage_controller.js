@@ -21,6 +21,13 @@ Pawn.controller('ManageController',
       })
     }
 
+    if($state.$current.includes["customer.transaction"] === true) {
+      CustomerService.getTransaction(1)
+      .then(function(d){
+        console.log(d)
+      })
+    }
+
 
     $scope.triggerShowEditDelete = function() {
       if (_.size(_.filter($scope.customers, function(e) { return e.checked === true; })) > 0) {
@@ -151,8 +158,15 @@ Pawn.controller('ManageController',
   }
 
   $scope.clickedExtend = function(item) {
-    console.log($scope.item.month);
-
+    date = convertDate(item.day.value,item.month.value, item.year.value)
+    data = {
+      item_id: item.id,
+      date: date
+    }
+    CustomerService.extend(data)
+    .then(function(d){
+      $state.go($state.current, {}, {reload: true});
+    })
   }
 
   $scope.clickedSettle = function(customer) {

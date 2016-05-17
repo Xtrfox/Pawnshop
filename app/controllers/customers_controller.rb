@@ -63,17 +63,30 @@ class CustomersController < ApplicationController
     today=Date.today
 
     items.each do |item|
-      if item['due_date'].to_date >= today
-        item.status = 'Active'
-      else
-        item.status = 'Expired'
+      unless item.status == 'Paid'
+        if item['due_date'].to_date >= today
+          item.status = 'Active'
+        else
+          item.status = 'Expired'
+        end
+        item.save!
       end
-      item.save!
     end
 
     response = {
       :customer => customer,
       :item => items
+    }
+    render json: response
+  end
+
+  def get_transaction
+    u = Transaction.find(params[:transaction_id])
+    items = u.items
+
+    response = {
+      :transaction => u,
+      :items => items
     }
     render json: response
   end
@@ -104,6 +117,26 @@ class CustomersController < ApplicationController
 
   end
 
+  def extend
+    today=Date.today
+    u = Item.find(params[:item_id])
+    u.due_date = params[:date]
+
+    unless item.status == 'Paid'
+      if u.due_date >= today
+        u.status = 'Active'
+      else
+        u.status = 'Expired'
+      end
+    end
+
+    u.save!
+
+    render json: {
+      item: u
+    }
+  end
+
   def settle
     transaction = Transaction.create(
                     customer_id: params[:customer_id],
@@ -122,7 +155,8 @@ class CustomersController < ApplicationController
 
     transact = {
       :customer => customer,
-      :paid_items => items
+      :paid_items => items,
+      :transaction =>  transaction
     }
 
     render json: transact

@@ -8,7 +8,9 @@ Rails.application.routes.draw do
    post '/customers/create' => 'customers#create'
    get '/customers/all_customers' => 'customers#all_customers'
    get '/customers/detail/:customer_id' => 'customers#get_customer'
+   get '/customers/transaction/:transaction_id' => 'customers#get_transaction'
    post '/customers/settle' => 'customers#settle'
+   post '/customers/extend' => 'customers#extend'
    get '/customers/all_items' => 'customers#all_items'
    post '/customers/post_items' => 'customers#post_items'
 
