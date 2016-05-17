@@ -151,7 +151,8 @@ Pawn.controller('ManageController',
   }
 
   $scope.clickedExtend = function(item) {
-    console.log(item);
+    console.log($scope.item.month);
+
   }
 
   $scope.clickedSettle = function(customer) {
@@ -160,18 +161,14 @@ Pawn.controller('ManageController',
     data = {
       "customer_id": $stateParams.customer_id,
       "item": item_ids.split(','),
-      "service_charge": .20,
       "total": $scope.total_amount,
       "paid_amount": $scope.amount,
     }
 
     CustomerService.settle(data)
     .then(function(d){
-      console.log(d);
+      $state.go('customer.settle');
     })
-
-    //$state.go('customer.settle', {customer_id: customer.customer.id});
-
   }
 
 

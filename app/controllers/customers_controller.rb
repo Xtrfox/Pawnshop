@@ -107,7 +107,6 @@ class CustomersController < ApplicationController
   def settle
     transaction = Transaction.create(
                     customer_id: params[:customer_id],
-                    service_charge: params[:service_charge],
                     total: params[:total],
                     paid_amount: params[:paid_amount]
                   )
@@ -119,7 +118,7 @@ class CustomersController < ApplicationController
     end
 
     customer = Customer.find(params[:customer_id])
-    items = Transaction.items
+    items = transaction.items
 
     transact = {
       :customer => customer,
