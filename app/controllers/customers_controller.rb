@@ -91,6 +91,17 @@ class CustomersController < ApplicationController
     render json: response
   end
 
+  def get_all_transactions
+    u = Customer.find(params[:customer_id])
+    transactions = u.transactions
+
+    response = {
+      :transactions => transactions,
+      :customer => u
+    }
+    render json: response
+  end
+
   def all_customers
     customers = Customer.all
 

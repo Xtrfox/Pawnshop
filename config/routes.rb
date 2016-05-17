@@ -12,6 +12,7 @@ Rails.application.routes.draw do
    post '/customers/settle' => 'customers#settle'
    post '/customers/extend' => 'customers#extend'
    get '/customers/all_items' => 'customers#all_items'
+   get '/customers/detail/:customer_id/transactions' => 'customers#get_all_transactions'
    post '/customers/post_items' => 'customers#post_items'
 
 

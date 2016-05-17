@@ -21,12 +21,17 @@ Pawn.controller('ManageController',
       })
     }
 
-    if($state.$current.includes["customer.transaction"] === true) {
-      CustomerService.getTransaction(1)
+    if($state.$current.includes["customer.settle"] === true) {
+      CustomerService.getTransaction($stateParams.transaction_id)
       .then(function(d){
         console.log(d)
       })
     }
+
+    CustomerService.get_all_transactions(2)
+    .then(function(d){
+      console.log(d)
+    })
 
 
     $scope.triggerShowEditDelete = function() {

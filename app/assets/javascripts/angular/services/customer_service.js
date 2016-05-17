@@ -50,6 +50,18 @@ angular.module('Pawn.services')
       return d.promise;
     }
 
+    this.get_all_transactions = function(customer_id) {
+      var d = $q.defer();
+      $http({
+        method: 'GET',
+        url: '/customers/detail/' + customer_id + '/transactions/'
+      }).success(function(data){
+        d.resolve(data);
+      });
+
+      return d.promise;
+    }
+
     this.settle = function(data) {
       var d = $q.defer();
       $http({
