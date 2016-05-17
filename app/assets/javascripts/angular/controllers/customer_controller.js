@@ -1,4 +1,5 @@
-Pawn.controller('CustomerController',
+angular.module('Pawn.controllers')
+  .controller('CustomerController',
   ['$scope', '$state', 'CustomerService',
     function($scope, $state, CustomerService) {
 

@@ -1,4 +1,5 @@
-Pawn.controller('MainController',
+angular.module('Pawn.controllers')
+  .controller('MainController',
     ['$scope',
     function($scope) {
 

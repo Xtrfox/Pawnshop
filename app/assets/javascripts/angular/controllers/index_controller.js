@@ -1,4 +1,5 @@
-Pawn.controller('IndexController',
+angular.module('Pawn.controllers')
+  .controller('IndexController',
   ['$scope', '$state', 'CustomerService', '$location', '$stateParams',
   function($scope, $state, CustomerService, $location, $stateParams) {
 

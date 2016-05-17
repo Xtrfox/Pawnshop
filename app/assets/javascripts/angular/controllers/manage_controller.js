@@ -1,4 +1,5 @@
-Pawn.controller('ManageController',
+angular.module('Pawn.controllers')
+  .controller('ManageController',
   ['$scope', '$state', 'CustomerService', '$location', '$stateParams', '$cookies',
   function($scope, $state,CustomerService, $location, $stateParams, $cookies) {
     // $scope.customers = CustomerService.getAllCustomer();
