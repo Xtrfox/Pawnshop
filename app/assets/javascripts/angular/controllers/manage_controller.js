@@ -1,4 +1,5 @@
 Pawn.controller('ManageController',
+  ['$scope', '$state', 'CustomerService', '$location', '$stateParams', '$cookies',
   function($scope, $state,CustomerService, $location, $stateParams, $cookies) {
     // $scope.customers = CustomerService.getAllCustomer();
     $scope.showEditDelete = false;
@@ -19,7 +20,7 @@ Pawn.controller('ManageController',
       .then(function(d){
         $scope.customer = d;
         console.log(d)
-        console.log(d.item[0].amount)
+        console.log(d.item.sml)
       })
     }
 
@@ -207,4 +208,4 @@ Pawn.controller('ManageController',
     // controller.rb - pg
 
 
-});
+}]);

@@ -1,5 +1,6 @@
-angular.module('Pawn.controllers')
-  .controller('IndexController', function($scope, $state, CustomerService, $location, $stateParams) {
+Pawn.controller('IndexController',
+  ['$scope', '$state', 'CustomerService', '$location', '$stateParams',
+  function($scope, $state, CustomerService, $location, $stateParams) {
 
     $scope.add = function() {
       $scope.items.push({'id':$scope.id, 'category': $scope.category, 'description': $scope.description,
@@ -35,4 +36,4 @@ angular.module('Pawn.controllers')
     })
 
 
-});
+}]);

@@ -1,8 +1,9 @@
-angular.module('Pawn.controllers')
-  .controller('MainController', function($scope) {
+Pawn.controller('MainController',
+    ['$scope',
+    function($scope) {
 
     $scope.test = 'Hello World!';
 
     $scope.me = "working";
 
-});
+}]);

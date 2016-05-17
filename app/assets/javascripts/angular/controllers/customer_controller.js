@@ -1,5 +1,6 @@
-angular.module('Pawn.controllers')
-  .controller('CustomerController', function($scope, $state, CustomerService) {
+Pawn.controller('CustomerController',
+  ['$scope', '$state', 'CustomerService',
+    function($scope, $state, CustomerService) {
 
     $scope.totaldays = 31;
 
@@ -77,4 +78,4 @@ angular.module('Pawn.controllers')
       })
       $state.go('manage');
     }
-  });
+  }]);
