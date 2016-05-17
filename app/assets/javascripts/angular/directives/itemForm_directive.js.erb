@@ -1,5 +1,5 @@
 angular.module('Pawn.directives')
-  .directive('addItemForm', function() {
+  .directive('addItemForm', [function() {
     return {
       restrict: 'E',
       scope: false,
@@ -14,4 +14,4 @@ angular.module('Pawn.directives')
         };
       }
     }
-});
+}]);
