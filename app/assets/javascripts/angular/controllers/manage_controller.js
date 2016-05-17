@@ -181,7 +181,9 @@ Pawn.controller('ManageController',
 
     CustomerService.settle(data)
     .then(function(d){
-      $state.go('customer.settle');
+      $scope.d = d
+      console.log(d.transaction.id);
+      $state.go('customer.settle', {transaction_id: d.transaction.id});
     })
   }
 
