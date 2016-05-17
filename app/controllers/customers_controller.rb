@@ -131,9 +131,13 @@ class CustomersController < ApplicationController
   def extend
     today=Date.today
     u = Item.find(params[:item_id])
+
+    charge = u.amount + (u.amount * u.risk_level.to_f)
+    u.amount = charge
+
     u.due_date = params[:date]
 
-    unless item.status == 'Paid'
+    unless u.status == 'Paid'
       if u.due_date >= today
         u.status = 'Active'
       else

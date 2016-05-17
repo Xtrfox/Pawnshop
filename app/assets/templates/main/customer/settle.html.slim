@@ -79,7 +79,7 @@
         td.remove-border
         th.remove-border Amount Paid:
         td.remove-border
-          | {{amount}}
+          | {{d.transaction.paid_amount}}
 
   .row-spacing.center
     button.btn.btn-primary.btn-wide.add-right type="button" ui-sref="manage" Done

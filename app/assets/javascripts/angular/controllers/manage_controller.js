@@ -18,20 +18,23 @@ Pawn.controller('ManageController',
       CustomerService.getCustomer($stateParams.customer_id)
       .then(function(d){
         $scope.customer = d;
+        console.log(d)
+        console.log(d.item[0].amount)
       })
     }
 
     if($state.$current.includes["customer.settle"] === true) {
       CustomerService.getTransaction($stateParams.transaction_id)
       .then(function(d){
-        console.log(d)
+        $scope.d = d
+        //console.log(d)
       })
     }
 
-    CustomerService.get_all_transactions(2)
-    .then(function(d){
-      console.log(d)
-    })
+    // CustomerService.get_all_transactions(2)
+    // .then(function(d){
+    //   console.log(d)
+    // })
 
 
     $scope.triggerShowEditDelete = function() {
@@ -103,7 +106,7 @@ Pawn.controller('ManageController',
       CustomerService.postItems(data)
       .then(function(data){
         $scope.pawn = data
-        console.log(data)
+        //console.log(data)
 
         interests = []
         total = 0
@@ -164,9 +167,11 @@ Pawn.controller('ManageController',
 
   $scope.clickedExtend = function(item) {
     date = convertDate(item.day.value,item.month.value, item.year.value)
+    amount = item.amount
     data = {
       item_id: item.id,
-      date: date
+      date: date,
+      amount: amount
     }
     CustomerService.extend(data)
     .then(function(d){
