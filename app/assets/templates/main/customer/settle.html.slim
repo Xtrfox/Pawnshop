@@ -1,23 +1,15 @@
 .app-body#pawn
   h4.pawn Receipt
   .row
-    .col-md-4
+    .col-md-5
       label for= "ticketID" Ticket ID:
-      p 456
-    .col-md-4
-      label for= "pawnDate" Pawn Date:
-      p ng-bind="pawn.item[0].pawn_date | date:'MMMM d, yyyy'"
-        | {{pawn.item[0].pawn_date}}
-    .col-md-4
-      label for= "dueDate" Due Date:
-      p ng-bind="pawn.item[0].due_date | date:'MMMM d, yyyy'"
-        | {{pawn.item[0].due_date}}
-  .row
-    .col-md-4
+      p
+        | 465
+    .col-md-5
       label for="customerName" Customer:
       p
         | {{pawn.customer.last_name}} {{pawn.customer.first_name}} {{pawn.customer.middle_initial}}
-      .col-md-8
+  .row
     .col-md-8
       label for="address" Address:
       p
@@ -39,6 +31,8 @@
         th Loan Amount
         th Rate
         th Interest
+        th Pawn Date
+        th Due Date
     tr ng-repeat="item in pawn.item"
       td
         | {{item.category}}
@@ -50,6 +44,10 @@
         | {{item.risk_level}}
       td
         | {{item.interest}}
+      td ng-bind="item.pawn_date | date:'MMMM d, yyyy'"
+        | {{item.pawn_date}}
+      td ng-bind="item.due_date | date:'MMMM d, yyyy'"
+        | {{item.due_date}}
     tr
       th # of items returned:
       td
@@ -59,12 +57,17 @@
       td
         | {{total}}
       td
+      td
+      td
       tr
-        td.remove-border.remove-border
-        td.remove-border
-        th.remove-border Service Charge:
-        td.remove-border
+        td
+        td
+        th Service Charge:
+        td
           | {{service_charge}}
+        td
+        td
+        td
       tr
         td.remove-border
         td.remove-border

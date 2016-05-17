@@ -21,7 +21,6 @@
     table.table.table-striped.table-hover.table-bordered
       thead
         tr
-          th
           th Customer ID
           th First Name
           th Last Name
@@ -31,8 +30,6 @@
           th Amount
           th Status
       tr.pointer-cursor.search-table ng-repeat="a in data"
-        td
-          input.fa-2x type="checkbox" ng-change="triggerShowEditDelete()" ng-model="customer.checked"
         td ng-click="clickedcustomer(a)"
           | {{a.customer.id}}
         td ng-click="clickedcustomer(a)"
