@@ -1,6 +1,6 @@
 Pawn.controller('ManageController',
   ['$scope', '$state', 'CustomerService', '$location', '$stateParams', '$cookies',
-  function($scope, $state,CustomerService, $location, $stateParams, $cookies) {
+  function($scope, $state, CustomerService, $location, $stateParams, $cookies) {
     // $scope.customers = CustomerService.getAllCustomer();
     $scope.showEditDelete = false;
     $scope.selection = "edit";

@@ -1,8 +1,8 @@
 angular.module('Pawn.directives')
-  .directive('sidebar', function() {
+  .directive('sidebar', [function() {
     return {
       restrict: 'E',
       replace: true,
       templateUrl: '<%= asset_path("shared/_sidebar.html") %>'
     }
-  });
+  }]);
