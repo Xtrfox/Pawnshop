@@ -127,7 +127,7 @@
               select.year.inline ng-model="item.year" ng-options="year.year for year in years track by year.value" name="birthday" required=""
                 option.inline ng-disabled="true" value=""  Year
             td
-              button.btn.btn-primary ng-click="clickedExtend(item)" Extend
+              button.btn.btn-primary ng-click="clickedExtend(item)" ng-disabled="item.status == 'Paid'" Extend
 
 
     .row-spacing.center

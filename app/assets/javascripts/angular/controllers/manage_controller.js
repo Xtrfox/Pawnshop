@@ -20,8 +20,6 @@ angular.module('Pawn.controllers')
       CustomerService.getCustomer($stateParams.customer_id)
       .then(function(d){
         $scope.customer = d;
-        console.log(d)
-        console.log(d.item.sml)
       })
     }
 
