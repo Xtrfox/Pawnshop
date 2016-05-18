@@ -29,7 +29,7 @@
           th Description
           th Amount
           th Status
-      tr.pointer-cursor.search-table ng-repeat="a in data"
+      tr.pointer-cursor.search-table ng-repeat="a in data | filter: search" 
         td ng-click="clickedcustomer(a)"
           | {{a.customer.id}}
         td ng-click="clickedcustomer(a)"

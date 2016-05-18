@@ -14,7 +14,7 @@
        th Amount
        th Status
     tbody
-      tr ng-repeat= "item in items | filter: searchKeyword"
+      tr ng-repeat= "item in items | filter: searchKeyword | orderBy:'id'"
         th
           | {{item.id}}
         td
