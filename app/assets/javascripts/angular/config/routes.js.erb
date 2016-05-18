@@ -1,4 +1,6 @@
-Pawn.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
+Pawn.config(
+  ['$stateProvider', '$urlRouterProvider', '$locationProvider',
+    function($stateProvider, $urlRouterProvider, $locationProvider) {
   $stateProvider
     .state('index', {
       url: '/',
@@ -59,6 +61,8 @@ Pawn.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     enabled: true,
     requireBase: false
   });
-}).run(function($rootScope, $state) {
+}]).run
+    ['$rootScope', '$state',
+    function($rootScope, $state) {
     $rootScope.$state = $state;
-});
+}];

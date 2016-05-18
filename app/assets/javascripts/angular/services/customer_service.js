@@ -1,5 +1,7 @@
 angular.module('Pawn.services')
-  .service('CustomerService', function($q, $http) {
+  .service('CustomerService',
+  ['$q', '$http',
+   function($q, $http) {
     this.createCustomer = function(data) {
       var d = $q.defer();
       $http({
@@ -115,4 +117,4 @@ angular.module('Pawn.services')
 
 
 
-});
+}]);

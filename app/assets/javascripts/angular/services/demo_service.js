@@ -1,6 +1,7 @@
 angular.module('Pawn.services')
-  .service('DemoService', function($http) {
-
+  .service('DemoService',
+    ['$http',
+    function($http) {
     this.customers = function() {
       return [
         {
@@ -65,4 +66,4 @@ angular.module('Pawn.services')
         }
       ];
     };
-  });
+  }]);
