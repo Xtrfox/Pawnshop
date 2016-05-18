@@ -140,7 +140,7 @@ angular.module('Pawn.controllers')
   $scope.totalyears = 100;
 
   $scope.years = [];
-  for (var i = 2020 i > 2020 - $scope.totalyears; i--) {
+  for (var i = 2020; i > 2020 - $scope.totalyears; i--) {
     $scope.years.push({value: i-1, year: i - 1});
   }
 
