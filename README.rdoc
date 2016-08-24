@@ -3,4 +3,4 @@ A web application that allows a typical Pawnshop to process day to day operation
 
 == DEMO
 
-ventureunion.herokuapp.com
+[Demo]: http://ventureunion.herokuapp.com
